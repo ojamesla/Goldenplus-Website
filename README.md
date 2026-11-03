@@ -1,55 +1,55 @@
-# Goldenplus Electronics — New Homepage Prototype
+# Goldenplus Electronics Website — V2
 
-This is a **standalone, local-first static HTML/CSS/JavaScript prototype** derived from the user's `Website.zip` backup. It does not require SitePro, PHP, WordPress, npm or a build step.
+A lightweight, responsive **four-page static website**, designed for GitHub Pages and Plesk hosting. No SitePro runtime, database, build system, or external CSS library is required.
 
-## Preview in Visual Studio Code
+## Pages
 
-1. Extract the ZIP file.
-2. Open the `Goldenplus-Website` folder in VS Code.
-3. Open `index.html` in a browser, or use the Live Server extension (`Open with Live Server`).
-4. Test desktop and mobile layouts using browser developer tools.
+| File | Purpose |
+| --- | --- |
+| `index.html` | Corporate homepage, solutions, products, short company-history preview, resources and contact |
+| `about.html` | Company history from 2008 through 2025 and today; based on previous official copy |
+| `products.html` | Pico Display overview (2.4 / 2.8 / 3.5 / 4.3-inch) and upcoming families |
+| `bde.html` | Brilliant Display Editor product page, releases, examples and tutorials |
 
-Alternative local web server:
+## Local preview
+
+Open this folder in VS Code or run:
 
 ```bash
-cd Goldenplus-Website
 python3 -m http.server 8000
 ```
 
-Open http://localhost:8000.
+Visit `http://localhost:8000`. Because every page is at repository root, it can also be deployed unchanged to `https://ojamesla.github.io/Goldenplus-Website/`.
 
-## Site sections
+## GitHub Pages publishing
 
-- Hero / introduction
-- Core solutions
-- Pico Display product family (2.4, 2.8, 3.5, 4.3 inch)
-- BDE software (GitHub Downloads / Examples)
-- Tutorials and support resources
-- Contact entry point (placeholder email: see below)
+Upload **the contents of this folder** to the `main` branch at the repository root. `index.html` must be in the root. GitHub Pages Settings: Deploy from a branch → `main` → `/(root)`.
 
-## Must verify before production
+## Important before public launch
 
-1. **Contact address:** Change `YOUR-CONTACT-EMAIL@example.com` in `index.html` to a verified corporate email. The email link is a placeholder and no form backend has been implemented.
-2. **Product specifications:** The resolutions presented here were taken from the earlier site and should be verified against released hardware.
-3. **Brand and images:** The optimized images were extracted from the provided backup. Confirm usage rights and marketing approval before publication.
-4. **Version compatibility:** BDE v2.0.3.2 is listed as the latest published installer in the current materials. Example project minimum compatible versions have not been verified.
-5. **Existing URLs:** Before replacing `httpdocs`, map old public URLs (such as `/Brilliant-IDE/`, `/Pico-Display/`) to the new pages with 301 redirects or preserve corresponding paths.
-6. **Forms:** Existing SitePro/PHP contact form is **not** included. Rebuild or replace it after verifying email delivery and anti-spam functionality.
-7. **SEO:** Add a real Open Graph social preview image, sitemap, robots.txt and confirmed canonical URLs when launch paths are final.
-8. **Hosting:** Keep original `httpdocs` and SitePro project backups. Do not deploy blindly over the live site.
+- **Contact link:** Currently redirects to existing goldenplus-elec.com.tw homepage as a safe temporary route; verify the correct contact page or company email before launch.
+- **Hardware specifications:** Screen sizes/resolutions are based on prior public materials; validate hardware, MCU, RAM, I/O and communications against authoritative product specs.
+- **History:** Copy reflects historical text from the previous site. Verify claims and dates before publishing as an official replacement.
+- **Images:** Selected photographs are adapted from the supplied legacy website, compressed to WebP for performance. Check image licensing and usage rights.
+- **No contact form:** This static site does not send email or handle user-submitted data. Add a secure form service or backend separately if needed.
+- **Old URLs:** If moving the production site away from SitePro, plan redirects from old product URLs to new routes to avoid broken inbound links.
+- **Source privacy:** Do not upload the original SitePro backup, credentials, database exports or access tokens to this public repository.
 
-## File structure
+## Structure
 
-```text
-Goldenplus-Website/
+```
+Goldenplus-Website-V2/
 ├── index.html
+├── about.html
+├── products.html
+├── bde.html
 ├── assets/
 │   ├── css/style.css
 │   ├── js/main.js
-│   └── images/*.webp, *.png
+│   └── images/
 └── README.md
 ```
 
-## Deployment plan
+## Design
 
-Deploy only after review. This prototype uses relative image/script paths so it can run as a static site on Plesk. Its large assets are externally hosted on GitHub and YouTube. Production deployment should be performed to a staging subdirectory or subdomain first, with backups and rollback planned.
+Single shared stylesheet and JavaScript navigation. Each HTML file is independently editable and has a relative link structure compatible with GitHub Pages. No server-side code is needed.
