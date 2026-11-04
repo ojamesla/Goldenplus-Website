@@ -1,102 +1,33 @@
-# Goldenplus Electronics Website — V2
+# Goldenplus Website V4 — News managed with JSON
 
-A lightweight, responsive **four-page static website**, designed for GitHub Pages and Plesk hosting. No SitePro runtime, database, build system, or external CSS library is required.
+Static multi-page website hosted with GitHub Pages. **New News articles no longer require copying HTML.**
 
-## Pages
+## Add an article
 
-| File | Purpose |
-| --- | --- |
-| `index.html` | Corporate homepage, solutions, products, short company-history preview, resources and contact |
-| `about.html` | Company history from 2008 through 2025 and today; based on previous official copy |
-| `products.html` | Pico Display overview (2.4 / 2.8 / 3.5 / 4.3-inch) and upcoming families |
-| `bde.html` | Brilliant Display Editor product page, releases, examples and tutorials |
+1. Copy event photos to `assets/images/news/` (prefer `.webp`).
+2. Edit **`data/news.json`** and add an entry with a unique `id`, date, category, status, title, summary and optional image.
+3. For a complete article, add a `content` array. Supported blocks: `{ "type": "heading", "text": "..." }`, `{ "type": "paragraph", "text": "..." }`, `{ "type": "list", "items": ["...", "..."] }`.
+4. Optionally set `event: {"name":"...","dates":"...","location":"..."}` and `gallery: ["assets/images/news/photo-01.webp"]`; `galleryAlt` provides descriptions.
+5. **Do not create a new HTML file**. The News listing automatically links to `article.html?id=YOUR_ID` for articles with a non-empty `content` array. You may omit `url` for such articles. Items without `content` continue linking to their existing external `url`.
+6. Test with a local HTTP server, then push to GitHub `main`.
 
-## Local preview
+Preview locally:
 
-Open this folder in VS Code or run:
-
-```bash
+```sh
+python3 -m json.tool data/news.json >/dev/null
 python3 -m http.server 8000
 ```
 
-Visit `http://localhost:8000`. Because every page is at repository root, it can also be deployed unchanged to `https://ojamesla.github.io/Goldenplus-Website/`.
+Open `http://localhost:8000/news.html` and `http://localhost:8000/article.html?id=taiwan-smart-agriweek-2026`.
 
-## GitHub Pages publishing
+Publish:
 
-Upload **the contents of this folder** to the `main` branch at the repository root. `index.html` must be in the root. GitHub Pages Settings: Deploy from a branch → `main` → `/(root)`.
-
-## Important before public launch
-
-- **Contact link:** Currently redirects to existing goldenplus-elec.com.tw homepage as a safe temporary route; verify the correct contact page or company email before launch.
-- **Hardware specifications:** Screen sizes/resolutions are based on prior public materials; validate hardware, MCU, RAM, I/O and communications against authoritative product specs.
-- **History:** Copy reflects historical text from the previous site. Verify claims and dates before publishing as an official replacement.
-- **Images:** Selected photographs are adapted from the supplied legacy website, compressed to WebP for performance. Check image licensing and usage rights.
-- **No contact form:** This static site does not send email or handle user-submitted data. Add a secure form service or backend separately if needed.
-- **Old URLs:** If moving the production site away from SitePro, plan redirects from old product URLs to new routes to avoid broken inbound links.
-- **Source privacy:** Do not upload the original SitePro backup, credentials, database exports or access tokens to this public repository.
-
-## Structure
-
-```
-Goldenplus-Website-V2/
-├── index.html
-├── about.html
-├── products.html
-├── bde.html
-├── assets/
-│   ├── css/style.css
-│   ├── js/main.js
-│   └── images/
-└── README.md
+```sh
+git add .
+git commit -m "Add Goldenplus news"
+git push origin main
 ```
 
-## Design
+**Important:** This is a browser-rendered static site. Article contents load from JSON via JavaScript; dedicated per-article metadata and search crawler support may be limited compared with pre-rendered static pages. If SEO becomes important for every article, use a static site generator later.
 
-Single shared stylesheet and JavaScript navigation. Each HTML file is independently editable and has a relative link structure compatible with GitHub Pages. No server-side code is needed.
-
-
-## News & Updates (V3)
-
-- `news.html`: separate news listing with category filters.
-- `data/news.json`: **only file needed to maintain the news entries**.
-- `assets/js/news.js`: loads JSON, sorts by latest date, shows the newest three entries on `index.html`, and renders all entries on `news.html`.
-- The homepage has a **Latest News** section. All site pages have a **News** navigation link.
-
-### Add a news entry
-
-Edit `data/news.json` in VS Code. Keep JSON valid and use this object structure:
-
-```json
-{
-    "id": "unique-item-id",
-    "date": "2026-11-04",
-    "category": "Product Update",
-    "status": "Released",
-    "title": "Announcement title",
-    "summary": "A short, factual description.",
-    "url": "https://example.com",
-    "linkLabel": "Read more"
-}
-```
-
-Supported filters: `Product Update`, `Examples`, `Tutorials`, `Roadmap`.
-Dates and publication status for the starter entries should be reviewed before public publication; the items are editable examples based on available BDE milestones.
-
-### Local testing
-
-Run `python3 -m http.server 8000` inside the website folder and open `http://localhost:8000/`.
-Do not use the `file://` URL for News testing: browsers typically block `fetch()` of local JSON files.
-
-### Deploy on GitHub Pages
-
-Copy **the contents** of this directory into the existing `Goldenplus-Website` repo root and commit to `main`. Preserve `index.html` at the root; upload `news.html`, `data/news.json`, and `assets/js/news.js` together.
-
-## Exhibition photo news (Nov 2026 update)
-
-- `news/taiwan-smart-agriweek-2026.html`: English event recap and photo gallery.
-- `assets/images/news/`: compressed event photography from Goldenplus.
-- `data/news.json`: Company News item with optional `image`, `imageAlt`, and `gallery` metadata.
-- `assets/js/news.js`: optional image support on News cards.
-- `news.html`: new Company News filter.
-
-The exhibition occurred September 8–10, 2026. Confirm all product descriptions and publication decisions before posting.
+The former `news/taiwan-smart-agriweek-2026.html` remains as a redirect for previously shared links. Existing product, About, Home and BDE pages are retained.

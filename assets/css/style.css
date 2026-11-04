@@ -34,3 +34,6 @@
 .event-gallery figcaption{padding:12px 14px;font-size:13px;color:#546a7c}
 .event-gallery a:focus-visible{outline:3px solid #2faeaa;outline-offset:2px}
 @media(max-width:720px){.news-card-media{margin:-23px -23px 20px}.news-card:has(.news-card-media){padding-top:23px}.event-facts{grid-template-columns:1fr}.event-gallery{grid-template-columns:1fr}.event-gallery img{height:auto;max-height:430px;object-fit:contain;background:#eaf0f4}}
+
+/* Shared JSON-backed article template */
+.article-section{background:#f6fafb}.article-section .event-article>p:first-child{margin-bottom:20px}.article-section .event-article ul{padding-left:24px}.article-section .event-article li{margin:8px 0}.article-section .event-article .news-error{color:#9a3340}.article-section .event-gallery{margin-bottom:30px}

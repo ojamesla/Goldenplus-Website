@@ -54,7 +54,8 @@
         card.appendChild(createElement('p', 'news-summary', item.summary));
         const bottom = createElement('div', 'news-card-bottom');
         bottom.appendChild(createElement('span', 'news-status', item.status));
-        const url = safeUrl(item.url);
+        const linkPath = Array.isArray(item.content) && item.content.length ? `article.html?id=${encodeURIComponent(item.id)}` : item.url;
+        const url = linkPath ? safeUrl(linkPath) : null;
         if (url) {
             const link = createElement('a', 'news-link', `${item.linkLabel || 'Read more'} →`);
             link.href = url;

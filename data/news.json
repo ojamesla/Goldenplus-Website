@@ -17,8 +17,60 @@
             "assets/images/news/agriweek-05.webp",
             "assets/images/news/agriweek-06.webp"
         ],
-        "url": "news/taiwan-smart-agriweek-2026.html",
-        "linkLabel": "View event gallery"
+        "url": "article.html?id=taiwan-smart-agriweek-2026",
+        "linkLabel": "View event gallery",
+        "event": {
+            "name": "Taiwan Smart Agriweek 2026",
+            "dates": "September 8–10, 2026",
+            "location": "Taipei Nangang Exhibition Center, Hall 1, Taiwan"
+        },
+        "content": [
+            {
+                "type": "heading",
+                "text": "Embedded HMI solutions in focus"
+            },
+            {
+                "type": "paragraph",
+                "text": "Goldenplus Electronics showcased embedded human-machine interface (HMI) technology at Taiwan Smart Agriweek 2026. Our exhibition displays included the Omni HMI and Omni PLC families, Aeternus HMI products, and Brilliant Display Editor (BDE), our visual GUI development environment."
+            },
+            {
+                "type": "paragraph",
+                "text": "The booth highlighted how graphical interfaces and embedded control hardware can be combined for equipment monitoring and automation applications. Visitors could explore a range of display sizes, control interfaces, and demonstrations on site."
+            },
+            {
+                "type": "heading",
+                "text": "Exhibition highlights"
+            },
+            {
+                "type": "list",
+                "items": [
+                    "Omni Display: HMI and PLC-oriented interface systems presented with integrated control features.",
+                    "Aeternus Display: embedded displays for user-interface and peripheral integration applications.",
+                    "Brilliant Display Editor: graphical interface design and software development workflow.",
+                    "Application demonstrations: interactive control panels and prototype equipment displayed at the booth."
+                ]
+            },
+            {
+                "type": "heading",
+                "text": "Photo gallery"
+            },
+            {
+                "type": "paragraph",
+                "text": "Selected photos from the Goldenplus exhibition booth, including hardware exhibits, the BDE display, and demonstration setups."
+            },
+            {
+                "type": "paragraph",
+                "text": "For more information, explore our Display Hardware and BDE Software pages."
+            }
+        ],
+        "galleryAlt": [
+            "Goldenplus Electronics exhibition booth at Taiwan Smart Agriweek 2026",
+            "Omni Display and HMI hardware exhibits",
+            "Goldenplus HMI platform exhibition view",
+            "Omni HMI and Omni PLC product showcase",
+            "Display modules and demonstration products on show",
+            "Aeternus HMI display demonstration"
+        ]
     },
     {
         "id": "bde-2032",
