@@ -90,3 +90,13 @@ Do not use the `file://` URL for News testing: browsers typically block `fetch()
 ### Deploy on GitHub Pages
 
 Copy **the contents** of this directory into the existing `Goldenplus-Website` repo root and commit to `main`. Preserve `index.html` at the root; upload `news.html`, `data/news.json`, and `assets/js/news.js` together.
+
+## Exhibition photo news (Nov 2026 update)
+
+- `news/taiwan-smart-agriweek-2026.html`: English event recap and photo gallery.
+- `assets/images/news/`: compressed event photography from Goldenplus.
+- `data/news.json`: Company News item with optional `image`, `imageAlt`, and `gallery` metadata.
+- `assets/js/news.js`: optional image support on News cards.
+- `news.html`: new Company News filter.
+
+The exhibition occurred September 8–10, 2026. Confirm all product descriptions and publication decisions before posting.

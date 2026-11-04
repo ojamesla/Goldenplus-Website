@@ -1,5 +1,26 @@
 [
     {
+        "id": "taiwan-smart-agriweek-2026",
+        "date": "2026-09-10",
+        "category": "Company News",
+        "status": "Event Recap",
+        "featured": true,
+        "title": "Goldenplus at Taiwan Smart Agriweek 2026",
+        "summary": "A look back at our embedded HMI and display technology showcase at Taipei Nangang Exhibition Center, September 8–10, 2026.",
+        "image": "assets/images/news/agriweek-cover.webp",
+        "imageAlt": "Goldenplus Electronics embedded HMI booth at Taiwan Smart Agriweek 2026",
+        "gallery": [
+            "assets/images/news/agriweek-01.webp",
+            "assets/images/news/agriweek-02.webp",
+            "assets/images/news/agriweek-03.webp",
+            "assets/images/news/agriweek-04.webp",
+            "assets/images/news/agriweek-05.webp",
+            "assets/images/news/agriweek-06.webp"
+        ],
+        "url": "news/taiwan-smart-agriweek-2026.html",
+        "linkLabel": "View event gallery"
+    },
+    {
         "id": "bde-2032",
         "date": "2026-11-03",
         "category": "Product Update",

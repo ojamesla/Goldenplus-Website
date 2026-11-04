@@ -38,6 +38,17 @@
         date.dateTime = item.date;
         meta.appendChild(date);
         meta.appendChild(createElement('span', 'news-category', item.category));
+        const imageUrl = item.image ? safeUrl(item.image) : null;
+        if (imageUrl) {
+            const media = createElement('div', 'news-card-media');
+            const img = createElement('img', 'news-card-image');
+            img.src = imageUrl;
+            img.alt = item.imageAlt || item.title;
+            img.loading = 'lazy';
+            img.decoding = 'async';
+            media.appendChild(img);
+            card.appendChild(media);
+        }
         card.appendChild(meta);
         card.appendChild(createElement('h3', '', item.title));
         card.appendChild(createElement('p', 'news-summary', item.summary));
@@ -61,7 +72,7 @@
         targets.forEach(target => {
             const latestOnly = target.dataset.newsList === 'latest';
             let visible = items.filter(item => latestOnly ? item.category !== 'Roadmap' : currentCategory === 'All' || item.category === currentCategory);
-            if (latestOnly) visible = visible.slice(0, 3);
+            if (latestOnly) visible = visible.slice().sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured))).slice(0, 3);
             target.replaceChildren();
             if (!visible.length) {
                 target.appendChild(createElement('p', 'news-empty', 'No updates in this category yet.'));
