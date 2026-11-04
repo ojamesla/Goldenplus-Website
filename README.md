@@ -53,3 +53,40 @@ Goldenplus-Website-V2/
 ## Design
 
 Single shared stylesheet and JavaScript navigation. Each HTML file is independently editable and has a relative link structure compatible with GitHub Pages. No server-side code is needed.
+
+
+## News & Updates (V3)
+
+- `news.html`: separate news listing with category filters.
+- `data/news.json`: **only file needed to maintain the news entries**.
+- `assets/js/news.js`: loads JSON, sorts by latest date, shows the newest three entries on `index.html`, and renders all entries on `news.html`.
+- The homepage has a **Latest News** section. All site pages have a **News** navigation link.
+
+### Add a news entry
+
+Edit `data/news.json` in VS Code. Keep JSON valid and use this object structure:
+
+```json
+{
+    "id": "unique-item-id",
+    "date": "2026-11-04",
+    "category": "Product Update",
+    "status": "Released",
+    "title": "Announcement title",
+    "summary": "A short, factual description.",
+    "url": "https://example.com",
+    "linkLabel": "Read more"
+}
+```
+
+Supported filters: `Product Update`, `Examples`, `Tutorials`, `Roadmap`.
+Dates and publication status for the starter entries should be reviewed before public publication; the items are editable examples based on available BDE milestones.
+
+### Local testing
+
+Run `python3 -m http.server 8000` inside the website folder and open `http://localhost:8000/`.
+Do not use the `file://` URL for News testing: browsers typically block `fetch()` of local JSON files.
+
+### Deploy on GitHub Pages
+
+Copy **the contents** of this directory into the existing `Goldenplus-Website` repo root and commit to `main`. Preserve `index.html` at the root; upload `news.html`, `data/news.json`, and `assets/js/news.js` together.

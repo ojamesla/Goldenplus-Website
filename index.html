@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -12,7 +11,7 @@
 <link href="assets/images/goldenplus-mark.png" rel="icon" type="image/png"/>
 <link href="assets/css/style.css" rel="stylesheet"/>
 <script defer="" src="assets/js/main.js"></script>
-</head>
+<script defer="True" src="assets/js/news.js"></script></head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header" id="top">
@@ -22,7 +21,7 @@
 <span><strong>GOLDENPLUS</strong><small>ELECTRONICS</small></span>
 </a>
 <button aria-controls="primary-nav" aria-expanded="false" aria-label="Open navigation" class="menu-toggle" type="button"><span></span><span></span><span></span></button>
-<nav aria-label="Main navigation" class="primary-nav" id="primary-nav"><a href="index.html#solutions">Solutions</a><a href="products.html">Display Hardware</a><a href="bde.html">BDE Software</a><a href="about.html">About Us</a><a href="index.html#resources">Resources</a><a class="nav-contact" href="index.html#contact">Contact us ↗</a></nav>
+<nav aria-label="Main navigation" class="primary-nav" id="primary-nav"><a href="index.html#solutions">Solutions</a><a href="products.html">Display Hardware</a><a href="bde.html">BDE Software</a><a href="about.html">About Us</a><a href="index.html#resources">Resources</a><a href="news.html">News</a><a class="nav-contact" href="index.html#contact">Contact us ↗</a></nav>
 </div>
 </header>
 <main id="main">
@@ -38,7 +37,7 @@
 </div>
 <div class="hero-visual">
 <div class="hero-visual-frame"><img alt="Pico Display product lineup showing four embedded display sizes" fetchpriority="high" height="700" src="assets/images/pico-lineup.webp" width="1150"/></div>
-<div class="floating-tag"><span class="pulse"></span><div><strong>Pico Display</strong><small>Designed for embedded interfaces</small></div></div>
+
 <span aria-hidden="true" class="visual-grid"></span>
 </div>
 </div>
@@ -74,7 +73,16 @@
 <div class="bde-preview"><div class="preview-top"><span class="window-dots"><i></i><i></i><i></i></span><span>BRILLIANT DISPLAY EDITOR</span></div><img alt="Screenshot of the Brilliant Display Editor visual design workspace" loading="lazy" src="assets/images/bde-editor.webp"/><div class="preview-bottom"><span class="live-indicator"></span> Visual GUI development environment</div></div>
 </div>
 </section>
-<section aria-labelledby="history-heading" class="section history-preview" id="about"><div class="container history-preview-grid"><div><p class="section-kicker">ABOUT GOLDENPLUS</p><h2 id="history-heading">Engineering expertise <span>since 2008.</span></h2><p class="section-lead">Founded in 2008, Goldenplus Electronics has evolved from LED lighting control and system integration into embedded displays and visual HMI development.</p><p class="muted">Discover the milestones behind our hardware and software integration expertise.</p><a class="btn btn-primary" href="about.html">Explore our story <span aria-hidden="true">↗</span></a></div><div class="milestone-list"><div><strong>2008</strong><span>Electronics engineering and LED lighting solutions</span></div><div><strong>2014</strong><span>ARM-based embedded systems and TFT interfaces</span></div><div><strong>2025</strong><span>Cross-platform visual GUI development</span></div></div></div></section><section aria-labelledby="resources-heading" class="section resources-section" id="resources">
+<section aria-labelledby="latest-news-heading" class="section news-section" id="latest-news">
+<div class="container">
+<div class="section-heading news-heading">
+<div><p class="section-kicker">LATEST UPDATES</p><h2 id="latest-news-heading">What's happening <span>at Goldenplus.</span></h2></div>
+<p>Product releases, sample projects, tutorials, and development news.</p>
+</div>
+<div aria-live="polite" class="news-grid" data-news-list="latest"><p class="news-loading">Loading updates…</p></div>
+<div class="news-more"><a class="text-link" href="news.html">View all news &amp; updates →</a></div>
+</div>
+</section><section aria-labelledby="history-heading" class="section history-preview" id="about"><div class="container history-preview-grid"><div><p class="section-kicker">ABOUT GOLDENPLUS</p><h2 id="history-heading">Engineering expertise <span>since 2008.</span></h2><p class="section-lead">Founded in 2008, Goldenplus Electronics has evolved from LED lighting control and system integration into embedded displays and visual HMI development.</p><p class="muted">Discover the milestones behind our hardware and software integration expertise.</p><a class="btn btn-primary" href="about.html">Explore our story <span aria-hidden="true">↗</span></a></div><div class="milestone-list"><div><strong>2008</strong><span>Electronics engineering and LED lighting solutions</span></div><div><strong>2014</strong><span>ARM-based embedded systems and TFT interfaces</span></div><div><strong>2025</strong><span>Cross-platform visual GUI development</span></div></div></div></section><section aria-labelledby="resources-heading" class="section resources-section" id="resources">
 <div class="container"><div class="section-heading"><div><p class="section-kicker">GET STARTED</p><h2 id="resources-heading">Everything you need<br/><span>to start building.</span></h2></div><p>Download the tool, open an example project, and follow the video tutorials.</p></div>
 <div class="resources-grid">
 <a class="resource-card" href="https://github.com/ojamesla/BDE-Releases/releases/latest" rel="noopener noreferrer" target="_blank"><span class="resource-ico">↓</span><span class="resource-type">01 / SOFTWARE</span><h3>Download BDE</h3><p>Windows installer and release notes.</p><span class="resource-cta">View latest release ↗</span></a>
@@ -85,6 +93,6 @@
 </section>
 <section class="contact-section" id="contact"><div class="container contact-grid"><div><p class="section-kicker">LET'S CONNECT</p><h2>Building something<br/><em>with a display?</em></h2><p>Talk with Goldenplus about your embedded GUI, product integration or display requirements.</p></div><div class="contact-cta"><a class="btn btn-primary" href="https://goldenplus-elec.com.tw/#contact" rel="noopener noreferrer" target="_blank">Contact through our current website <span aria-hidden="true">↗</span></a><p class="contact-warning">Contact currently opens our existing website. A new inquiry form will be added after verification.</p><a class="footer-site-link" href="https://goldenplus-elec.com.tw/">goldenplus-elec.com.tw ↗</a></div></div></section>
 </main>
-<footer class="site-footer"><div class="container footer-main"><a class="brand" href="index.html"><img alt="" height="38" src="assets/images/goldenplus-mark.png" width="38"/><span><strong>GOLDENPLUS</strong><small>ELECTRONICS</small></span></a><div class="footer-links"><a href="products.html">Hardware</a><a href="bde.html">BDE</a><a href="index.html#resources">Resources</a><a href="index.html#contact">Contact</a></div></div><div class="container footer-bottom"><span>© <span id="year">2026</span> Goldenplus Electronics. All rights reserved.</span><span>Embedded Display &amp; GUI Solutions</span></div></footer>
+<footer class="site-footer"><div class="container footer-main"><a class="brand" href="index.html"><img alt="" height="38" src="assets/images/goldenplus-mark.png" width="38"/><span><strong>GOLDENPLUS</strong><small>ELECTRONICS</small></span></a><div class="footer-links"><a href="news.html">News</a><a href="products.html">Hardware</a><a href="bde.html">BDE</a><a href="index.html#resources">Resources</a><a href="index.html#contact">Contact</a></div></div><div class="container footer-bottom"><span>© <span id="year">2026</span> Goldenplus Electronics. All rights reserved.</span><span>Embedded Display &amp; GUI Solutions</span></div></footer>
 </body>
 </html>

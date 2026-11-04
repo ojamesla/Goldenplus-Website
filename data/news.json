@@ -1,0 +1,42 @@
+[
+    {
+        "id": "bde-2032",
+        "date": "2026-11-03",
+        "category": "Product Update",
+        "status": "Released",
+        "title": "Brilliant Display Editor v2.0.3.2 Available",
+        "summary": "The BDE Windows installer is available through our official GitHub Releases page.",
+        "url": "https://github.com/ojamesla/BDE-Releases/releases/tag/v2.0.3.2",
+        "linkLabel": "View release"
+    },
+    {
+        "id": "display-demos",
+        "date": "2026-11-03",
+        "category": "Examples",
+        "status": "Available",
+        "title": "ESP32 Display Demo Projects Published",
+        "summary": "Explore editable BDE project examples for 320 × 480 and 240 × 320 display configurations.",
+        "url": "https://github.com/ojamesla/BDE-Examples",
+        "linkLabel": "Browse examples"
+    },
+    {
+        "id": "tutorial-series",
+        "date": "2026-11-03",
+        "category": "Tutorials",
+        "status": "Available",
+        "title": "BDE Video Tutorials",
+        "summary": "Watch a guided BDE demonstration and follow our video learning resources.",
+        "url": "https://youtu.be/vJTLKdbB1n0",
+        "linkLabel": "Watch video"
+    },
+    {
+        "id": "simulator-roadmap",
+        "date": "2026-11-04",
+        "category": "Roadmap",
+        "status": "In Development",
+        "title": "BDE Desktop Simulator Development",
+        "summary": "Desktop simulation is being developed and evaluated. It is not part of the current BDE Windows release.",
+        "url": "bde.html",
+        "linkLabel": "About BDE"
+    }
+]
