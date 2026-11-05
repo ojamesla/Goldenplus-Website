@@ -1,14 +1,52 @@
 [
     {
-        "id": "taiwan-smart-agriweek-2026",
-        "date": "2026-09-10",
         "category": "Company News",
-        "status": "Event Recap",
+        "content": [
+            {
+                "text": "Embedded HMI solutions in focus",
+                "type": "heading"
+            },
+            {
+                "text": "Goldenplus Electronics showcased embedded human-machine interface (HMI) technology at Taiwan Smart Agriweek 2026. Our exhibition displays included the Omni HMI and Omni PLC families, Aeternus HMI products, and Brilliant Display Editor (BDE), our visual GUI development environment.",
+                "type": "paragraph"
+            },
+            {
+                "text": "The booth highlighted how graphical interfaces and embedded control hardware can be combined for equipment monitoring and automation applications. Visitors could explore a range of display sizes, control interfaces, and demonstrations on site.",
+                "type": "paragraph"
+            },
+            {
+                "text": "Exhibition highlights",
+                "type": "heading"
+            },
+            {
+                "items": [
+                    "Omni Display: HMI and PLC-oriented interface systems presented with integrated control features.",
+                    "Aeternus Display: embedded displays for user-interface and peripheral integration applications.",
+                    "Brilliant Display Editor: graphical interface design and software development workflow.",
+                    "Application demonstrations: interactive control panels and prototype equipment displayed at the booth."
+                ],
+                "type": "list"
+            },
+            {
+                "text": "Photo gallery",
+                "type": "heading"
+            },
+            {
+                "text": "Selected photos from the Goldenplus exhibition booth, including hardware exhibits, the BDE display, and demonstration setups.",
+                "type": "paragraph"
+            },
+            {
+                "text": "For more information, explore our Display Hardware and BDE Software pages.",
+                "type": "paragraph"
+            }
+        ],
+        "date": "2026-09-10",
+        "event": {
+            "dates": "September 8–10, 2026",
+            "location": "Taipei Nangang Exhibition Center, Hall 1, Taiwan",
+            "name": "Taiwan Smart Agriweek 2026"
+        },
         "featured": true,
-        "title": "Goldenplus at Taiwan Smart Agriweek 2026",
-        "summary": "A look back at our embedded HMI and display technology showcase at Taipei Nangang Exhibition Center, September 8–10, 2026.",
-        "image": "assets/images/news/agriweek-cover.webp",
-        "imageAlt": "Goldenplus Electronics embedded HMI booth at Taiwan Smart Agriweek 2026",
         "gallery": [
             "assets/images/news/agriweek-01.webp",
             "assets/images/news/agriweek-02.webp",
@@ -17,52 +55,6 @@
             "assets/images/news/agriweek-05.webp",
             "assets/images/news/agriweek-06.webp"
         ],
-        "url": "article.html?id=taiwan-smart-agriweek-2026",
-        "linkLabel": "View event gallery",
-        "event": {
-            "name": "Taiwan Smart Agriweek 2026",
-            "dates": "September 8–10, 2026",
-            "location": "Taipei Nangang Exhibition Center, Hall 1, Taiwan"
-        },
-        "content": [
-            {
-                "type": "heading",
-                "text": "Embedded HMI solutions in focus"
-            },
-            {
-                "type": "paragraph",
-                "text": "Goldenplus Electronics showcased embedded human-machine interface (HMI) technology at Taiwan Smart Agriweek 2026. Our exhibition displays included the Omni HMI and Omni PLC families, Aeternus HMI products, and Brilliant Display Editor (BDE), our visual GUI development environment."
-            },
-            {
-                "type": "paragraph",
-                "text": "The booth highlighted how graphical interfaces and embedded control hardware can be combined for equipment monitoring and automation applications. Visitors could explore a range of display sizes, control interfaces, and demonstrations on site."
-            },
-            {
-                "type": "heading",
-                "text": "Exhibition highlights"
-            },
-            {
-                "type": "list",
-                "items": [
-                    "Omni Display: HMI and PLC-oriented interface systems presented with integrated control features.",
-                    "Aeternus Display: embedded displays for user-interface and peripheral integration applications.",
-                    "Brilliant Display Editor: graphical interface design and software development workflow.",
-                    "Application demonstrations: interactive control panels and prototype equipment displayed at the booth."
-                ]
-            },
-            {
-                "type": "heading",
-                "text": "Photo gallery"
-            },
-            {
-                "type": "paragraph",
-                "text": "Selected photos from the Goldenplus exhibition booth, including hardware exhibits, the BDE display, and demonstration setups."
-            },
-            {
-                "type": "paragraph",
-                "text": "For more information, explore our Display Hardware and BDE Software pages."
-            }
-        ],
         "galleryAlt": [
             "Goldenplus Electronics exhibition booth at Taiwan Smart Agriweek 2026",
             "Omni Display and HMI hardware exhibits",
@@ -70,46 +62,89 @@
             "Omni HMI and Omni PLC product showcase",
             "Display modules and demonstration products on show",
             "Aeternus HMI display demonstration"
-        ]
+        ],
+        "id": "taiwan-smart-agriweek-2026",
+        "image": "assets/images/news/agriweek-cover.webp",
+        "imageAlt": "Goldenplus Electronics embedded HMI booth at Taiwan Smart Agriweek 2026",
+        "linkLabel": "View event gallery",
+        "status": "Event Recap",
+        "summary": "A look back at our embedded HMI and display technology showcase at Taipei Nangang Exhibition Center, September 8–10, 2026.",
+        "title": "Goldenplus at Taiwan Smart Agriweek 2026",
+        "url": "article.html?id=taiwan-smart-agriweek-2026"
     },
     {
-        "id": "bde-2032",
-        "date": "2026-11-03",
         "category": "Product Update",
+        "date": "2026-11-03",
+        "id": "bde-2032",
+        "linkLabel": "View release",
         "status": "Released",
-        "title": "Brilliant Display Editor v2.0.3.2 Available",
         "summary": "The BDE Windows installer is available through our official GitHub Releases page.",
-        "url": "https://github.com/ojamesla/BDE-Releases/releases/tag/v2.0.3.2",
-        "linkLabel": "View release"
+        "title": "Brilliant Display Editor v2.0.3.2 Available",
+        "url": "https://github.com/ojamesla/BDE-Releases/releases/tag/v2.0.3.2"
     },
     {
-        "id": "display-demos",
-        "date": "2026-11-03",
         "category": "Examples",
-        "status": "Available",
-        "title": "ESP32 Display Demo Projects Published",
-        "summary": "Explore editable BDE project examples for 320 × 480 and 240 × 320 display configurations.",
-        "url": "https://github.com/ojamesla/BDE-Examples",
-        "linkLabel": "Browse examples"
-    },
-    {
-        "id": "tutorial-series",
         "date": "2026-11-03",
-        "category": "Tutorials",
+        "id": "display-demos",
+        "linkLabel": "Browse examples",
         "status": "Available",
-        "title": "BDE Video Tutorials",
-        "summary": "Watch a guided BDE demonstration and follow our video learning resources.",
-        "url": "https://youtu.be/vJTLKdbB1n0",
-        "linkLabel": "Watch video"
+        "summary": "Explore editable BDE project examples for 320 × 480 and 240 × 320 display configurations.",
+        "title": "ESP32 Display Demo Projects Published",
+        "url": "https://github.com/ojamesla/BDE-Examples"
     },
     {
-        "id": "simulator-roadmap",
-        "date": "2026-11-04",
+        "category": "Tutorials",
+        "date": "2026-11-03",
+        "id": "tutorial-series",
+        "linkLabel": "Watch video",
+        "status": "Available",
+        "summary": "Watch a guided BDE demonstration and follow our video learning resources.",
+        "title": "BDE Video Tutorials",
+        "url": "https://youtu.be/vJTLKdbB1n0"
+    },
+    {
         "category": "Roadmap",
+        "date": "2026-11-04",
+        "id": "simulator-roadmap",
+        "linkLabel": "About BDE",
         "status": "In Development",
-        "title": "BDE Desktop Simulator Development",
         "summary": "Desktop simulation is being developed and evaluated. It is not part of the current BDE Windows release.",
-        "url": "bde.html",
-        "linkLabel": "About BDE"
+        "title": "BDE Desktop Simulator Development",
+        "url": "bde.html"
+    },
+    {
+        "category": "Company News",
+        "content": [
+            {
+                "text": "News Publishing Test",
+                "type": "heading"
+            },
+            {
+                "text": "Goldenplus Electronics is testing a new Qt-based News Manager for website content management and publishing.",
+                "type": "paragraph"
+            },
+            {
+                "items": [
+                    "Create and edit news articles",
+                    "Upload cover images and photo galleries",
+                    "Publish website updates using FTPS",
+                    "Manage news content using JSON"
+                ],
+                "type": "list"
+            }
+        ],
+        "date": "2026-11-05",
+        "featured": false,
+        "gallery": [
+            "assets/images/news/test-news-001-ca1a91ec.jpg"
+        ],
+        "id": "test-news-001",
+        "image": "assets/images/news/test-news-001-8ebae15f-cover.jpg",
+        "imageAlt": "Goldenplus Electronics news publishing test",
+        "linkLabel": "Read more",
+        "status": "Released",
+        "summary": "Testing the new Goldenplus News Manager for publishing website updates.",
+        "title": "Goldenplus News Publishing Test",
+        "url": "article.html?id=test-news-001"
     }
 ]
