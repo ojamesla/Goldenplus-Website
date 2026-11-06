@@ -74,3 +74,7 @@ On GitHub Pages and localhost, the production host check is false: the original 
 ### News directory redirect fix
 
 Do not redirect `/news/` to `/news`: Apache automatically adds the slash for the existing `news/` directory, causing a redirect loop. Explicit News rules now canonicalize `/news` and `/news.html` to `/news/` and internally serve `news.html`. The generic slash-removal and listing rules exclude the News directory. Article routes such as `/news/test-news-001` remain unchanged. Upload the updated server configuration and versioned HTML/route script together. After replacing a bad permanent redirect, verify with a fresh private browser window; an existing browser profile may have cached the old 301 responses.
+
+### Hosting compatibility
+
+The News directory rewrite uses `[L]`, which is supported by older Apache hosts, instead of the Apache 2.4-only `[END]` flag. If installing server configuration causes all paths, including static CSS/JS, to return HTTP 500, restore the previous working `.htaccess` first and inspect the host error log. A generic HTTP 500 response alone cannot identify the exact configuration directive.

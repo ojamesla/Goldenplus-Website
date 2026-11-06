@@ -50,7 +50,8 @@ RewriteRule ^news\.html$ /news/ [R=301,L]
 RewriteCond %{HTTP_HOST} ^(?:www\.)?goldenplus-elec\.com\.tw(?::[0-9]+)?$ [NC]
 RewriteRule ^news$ /news/ [R=301,L]
 RewriteCond %{HTTP_HOST} ^(?:www\.)?goldenplus-elec\.com\.tw(?::[0-9]+)?$ [NC]
-RewriteRule ^news/$ news.html [END]
+# Use the compatible L flag; END requires Apache 2.4 or newer.
+RewriteRule ^news/$ news.html [L]
 # Clean URLs are enabled only for the production domain.
 RewriteCond %{HTTP_HOST} ^(?:www\.)?goldenplus-elec\.com\.tw(?::[0-9]+)?$ [NC]
 RewriteCond %{THE_REQUEST} \s/+product\.html[?\s] [NC]
