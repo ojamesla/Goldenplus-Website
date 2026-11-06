@@ -48,3 +48,15 @@ python3 -m http.server 8000
 ```
 
 Check `/`, `/products.html`, and `/product.html?id=pico`, `?id=aeternus`, `?id=omni`. The detailed pages require JavaScript, as the News article template does. Search previews for individual query-string pages may not reflect dynamically populated metadata.
+
+## Publishing updates and avoiding stale caches
+
+Before uploading a release, run `python3 tools/update_asset_versions.py`. It adds a content hash to each root HTML page's local CSS/JavaScript URLs. Run it again whenever an asset changes; unchanged files keep their version. Upload the updated HTML **and** its matching assets together. This also works on GitHub Pages, which ignores `.htaccess` and `web.config`.
+
+On the Apache production host, upload `.htaccess` too: HTML, CSS, JavaScript and JSON now require cache revalidation instead of retaining CSS/JS for eight days. Existing image caching is retained. The IIS `web.config` also requests revalidation for static files. Previously cached HTML can still need one force refresh after the first deployment of this fix.
+
+Deploy from `feat/product-catalog` while this pull request is open; `main` does not contain the catalog until the PR is merged. Upload **both** `products.html` (listing) and `product.html` (shared detail template), plus the entire `assets/` and `data/` folders, to the same website root as `index.html`. Keep `.git/` on your computer. Check that uploads did not create a nested project directory.
+
+The server configurations prefer `index.html` over old PHP homepages. Catalog paths are excluded from the legacy SiteBuilder fallback, so a missing `product.html` returns 404 instead of executing legacy PHP. This does not restore a missing file: upload the actual `product.html`. If an existing static file still returns 500, inspect the hosting error log.
+
+After deployment, check `/`, `/products.html`, `/product.html?id=pico`, `/product.html?id=aeternus`, `/product.html?id=omni`, `/news.html` and `/data/products.json`. Confirm the new homepage title, rendered tables, brochure downloads and cache response headers.
