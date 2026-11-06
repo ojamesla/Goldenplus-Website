@@ -1,0 +1,239 @@
+[
+  {
+    "id": "pico",
+    "name": "Pico Display",
+    "category": "Embedded display modules",
+    "tagline": "A compact starting point for your embedded interface.",
+    "summary": "Integrate a display module into your own enclosure and build the interface with Brilliant Display Editor.",
+    "audience": "Embedded developers and equipment designers integrating a display into their own product.",
+    "highlights": [
+      "Compact display formats for custom equipment",
+      "Visual screen design with BDE",
+      "Peripheral integration for interactive controls"
+    ],
+    "facts": [
+      [
+        "Product format",
+        "Display module for equipment integration"
+      ],
+      [
+        "Development software",
+        "Brilliant Display Editor"
+      ],
+      [
+        "Integration",
+        "Custom enclosure and application electronics"
+      ],
+      [
+        "Selection",
+        "Choose a screen size and confirm the target board configuration"
+      ]
+    ],
+    "models": {
+      "caption": "Pico Display screen formats",
+      "columns": [
+        "Screen size",
+        "Resolution",
+        "Interface layout"
+      ],
+      "rows": [
+        [
+          "2.4 inch",
+          "240 × 320",
+          "Portrait"
+        ],
+        [
+          "2.8 inch",
+          "240 × 320",
+          "Portrait"
+        ],
+        [
+          "3.5 inch",
+          "320 × 480",
+          "Portrait / landscape"
+        ],
+        [
+          "4.3 inch",
+          "480 × 272",
+          "Landscape"
+        ]
+      ]
+    },
+    "note": "Looking for a 5-inch or 7-inch configuration? Contact us with your resolution and interface requirements. CPU, memory and available I/O depend on the selected board.",
+    "applications": [
+      "Equipment operator panels",
+      "Sensor value displays",
+      "Embedded interface prototypes"
+    ],
+    "downloads": [
+      {
+        "label": "Product range brochure · English",
+        "path": "assets/docs/product-range-en.pdf"
+      },
+      {
+        "label": "產品系列型錄 · 繁體中文",
+        "path": "assets/docs/product-range-zh-tw.pdf"
+      }
+    ],
+    "comparison": {
+      "format": "Embedded module",
+      "integration": "Build into your equipment",
+      "focus": "Screen format and target board"
+    }
+  },
+  {
+    "id": "aeternus",
+    "name": "Aeternus Display",
+    "category": "Enclosed HMI",
+    "tagline": "Connect your interface to the world around it.",
+    "summary": "An enclosed HMI family combining a touch display with peripheral connections and Python-based application development.",
+    "audience": "Equipment builders looking for an enclosed interface with direct peripheral connectivity.",
+    "highlights": [
+      "IPS display with capacitive touch",
+      "PWM, analog input and I²C connectivity",
+      "Ethernet, Wi-Fi and industrial communication options"
+    ],
+    "facts": [
+      [
+        "Product format",
+        "HMI with enclosure"
+      ],
+      [
+        "Display",
+        "IPS TFT with capacitive touch"
+      ],
+      [
+        "Peripheral interfaces",
+        "PWM with capture, 10-bit analog input, I²C"
+      ],
+      [
+        "Network interfaces",
+        "Ethernet and Wi-Fi"
+      ],
+      [
+        "Industrial interfaces",
+        "RS485, CAN bus and USB"
+      ]
+    ],
+    "models": {
+      "caption": "Aeternus Display sizes",
+      "columns": [
+        "Screen size",
+        "Product format"
+      ],
+      "rows": [
+        [
+          "3.5 inch",
+          "Enclosed touch HMI"
+        ],
+        [
+          "4.3 inch",
+          "Enclosed touch HMI"
+        ],
+        [
+          "5.0 inch",
+          "Enclosed touch HMI"
+        ]
+      ]
+    },
+    "note": "Interface availability, resolution and enclosure configuration must be confirmed for the selected model. Contact us about other screen sizes and application requirements.",
+    "applications": [
+      "Peripheral-connected equipment",
+      "Sensor monitoring panels",
+      "Connected operator interfaces"
+    ],
+    "downloads": [
+      {
+        "label": "Aeternus brochure · English",
+        "path": "assets/docs/aeternus-en.pdf"
+      },
+      {
+        "label": "Aeternus 產品介紹 · 繁體中文",
+        "path": "assets/docs/aeternus-zh-tw.pdf"
+      }
+    ],
+    "comparison": {
+      "format": "Enclosed touch HMI",
+      "integration": "Connect peripherals to an enclosed HMI",
+      "focus": "Peripheral and communication interfaces"
+    }
+  },
+  {
+    "id": "omni",
+    "name": "Omni HMI / PLC",
+    "category": "Display and control",
+    "tagline": "Bring equipment monitoring and control together.",
+    "summary": "Choose an HMI with integrated PLC functionality or a compact PLC with a display, with industrial inputs and outputs for equipment control.",
+    "audience": "Automation and equipment projects requiring relay outputs, isolated inputs and an operator display.",
+    "highlights": [
+      "Omni HMI and Omni PLC configurations",
+      "Relay outputs and isolated 24V DC inputs",
+      "0–10V analog inputs and industrial communication"
+    ],
+    "facts": [
+      [
+        "Product format",
+        "Omni HMI or Omni PLC"
+      ],
+      [
+        "Digital control",
+        "Relay outputs and isolated 24V DC digital inputs"
+      ],
+      [
+        "Analog input",
+        "0–10V"
+      ],
+      [
+        "Connectivity",
+        "Ethernet, RS485, Wi-Fi and CAN bus"
+      ]
+    ],
+    "models": {
+      "caption": "Omni HMI and Omni PLC configurations",
+      "columns": [
+        "Configuration",
+        "Display sizes",
+        "Relay outputs",
+        "Isolated inputs",
+        "Analog inputs"
+      ],
+      "rows": [
+        [
+          "Omni HMI",
+          "3.5 / 4.3 / 5.0 inch",
+          "4 channels",
+          "4 × 24V DC",
+          "2 × 0–10V"
+        ],
+        [
+          "Omni PLC",
+          "1.69 inch",
+          "6 channels",
+          "6 × 24V DC",
+          "2 × 0–10V"
+        ]
+      ]
+    },
+    "note": "Omni HMI and Omni PLC are different hardware configurations. Confirm screen, I/O ratings and communication configuration for the selected model.",
+    "applications": [
+      "Equipment status and control",
+      "Relay-based automation",
+      "Industrial monitoring panels"
+    ],
+    "downloads": [
+      {
+        "label": "Omni brochure · English",
+        "path": "assets/docs/omni-en.pdf"
+      },
+      {
+        "label": "Omni 產品介紹 · 繁體中文",
+        "path": "assets/docs/omni-zh-tw.pdf"
+      }
+    ],
+    "comparison": {
+      "format": "HMI / PLC control platform",
+      "integration": "Connect industrial inputs and outputs",
+      "focus": "Relay, isolated input and analog input requirements"
+    }
+  }
+]

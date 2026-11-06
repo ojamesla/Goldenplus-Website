@@ -31,3 +31,20 @@ git push origin main
 **Important:** This is a browser-rendered static site. Article contents load from JSON via JavaScript; dedicated per-article metadata and search crawler support may be limited compared with pre-rendered static pages. If SEO becomes important for every article, use a static site generator later.
 
 The former `news/taiwan-smart-agriweek-2026.html` remains as a redirect for previously shared links. Existing product, About, Home and BDE pages are retained.
+
+## Product catalog
+
+The homepage family cards, product listing, comparison and shared `product.html?id=pico` detail page load `data/products.json`. The other family IDs are `aeternus` and `omni`. Product photos are optional; current catalog pages use text and tables.
+
+Each family contains `id`, `name`, `category`, `tagline`, `summary`, `audience`, `highlights`, `facts`, `models` (`caption`, `columns`, `rows`), `note`, `applications`, `comparison` (`format`, `integration`, `focus`) and `downloads`. Keep the three family IDs stable. Downloads must point to PDFs under `assets/docs/`. The family comparison uses these same records.
+
+English and Chinese brochures in `assets/docs/` are the original supplied exhibition PDFs. Published specifications follow these materials and the existing Pico display formats. Unconfirmed CPU/memory specifications and retail prices are intentionally omitted. Confirm any new model, size or interface before publishing it.
+
+Preview through HTTP, not by opening HTML with `file://`:
+
+```sh
+python3 -m json.tool data/products.json >/dev/null
+python3 -m http.server 8000
+```
+
+Check `/`, `/products.html`, and `/product.html?id=pico`, `?id=aeternus`, `?id=omni`. The detailed pages require JavaScript, as the News article template does. Search previews for individual query-string pages may not reflect dynamically populated metadata.
