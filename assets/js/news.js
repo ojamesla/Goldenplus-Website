@@ -23,7 +23,7 @@
 
     function safeUrl(value) {
         try {
-            const url = new URL(value, window.location.href);
+            const url = new URL(window.GoldenplusRoutes.url(value), document.baseURI);
             if (url.protocol !== 'https:' && url.protocol !== 'http:') return null;
             return url.href;
         } catch (error) {
@@ -93,7 +93,7 @@
         render();
     }));
 
-    fetch('data/news.json', { cache: 'no-cache' })
+    fetch(new URL('data/news.json', document.baseURI), { cache: 'no-cache' })
         .then(response => {
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             return response.json();

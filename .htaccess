@@ -43,8 +43,32 @@ RewriteRule ^\.well-known/.+ - [L]
 
 # Prefer the new static homepage over a leftover SiteBuilder PHP entry point.
 DirectoryIndex index.html index.php index.cgi
+# Clean URLs are enabled only for the production domain.
+RewriteCond %{HTTP_HOST} ^(?:www\.)?goldenplus-elec\.com\.tw(?::[0-9]+)?$ [NC]
+RewriteCond %{THE_REQUEST} \s/+product\.html[?\s] [NC]
+RewriteCond %{QUERY_STRING} (?:^|&)id=([A-Za-z0-9_-]+)(?:&|$)
+RewriteRule ^product\.html$ /products/%1? [R=301,L]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?goldenplus-elec\.com\.tw(?::[0-9]+)?$ [NC]
+RewriteCond %{THE_REQUEST} \s/+article\.html[?\s] [NC]
+RewriteCond %{QUERY_STRING} (?:^|&)id=([A-Za-z0-9_-]+)(?:&|$)
+RewriteRule ^article\.html$ /news/%1? [R=301,L]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?goldenplus-elec\.com\.tw(?::[0-9]+)?$ [NC]
+RewriteCond %{THE_REQUEST} \s/+index\.html[?\s] [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?goldenplus-elec\.com\.tw(?::[0-9]+)?$ [NC]
+RewriteCond %{THE_REQUEST} \s/+(?:products|news|about|bde)\.html[?\s] [NC]
+RewriteRule ^(products|news|about|bde)\.html$ /$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?goldenplus-elec\.com\.tw(?::[0-9]+)?$ [NC]
+RewriteRule ^((?:products|news)(?:/[A-Za-z0-9_-]+)?|about|bde)/$ /$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?goldenplus-elec\.com\.tw(?::[0-9]+)?$ [NC]
+RewriteRule ^(products|news|about|bde)$ $1.html [L]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?goldenplus-elec\.com\.tw(?::[0-9]+)?$ [NC]
+RewriteRule ^products/[A-Za-z0-9_-]+$ product.html [L]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?goldenplus-elec\.com\.tw(?::[0-9]+)?$ [NC]
+RewriteRule ^news/[A-Za-z0-9_-]+$ article.html [L]
+
 # Missing catalog files must return 404 instead of entering legacy PHP code.
-RewriteRule ^(?:product(?:s)?\.html$|assets(?:/|$)|data(?:/|$)) - [L]
+RewriteRule ^(?:(?:index|product|products|article|news|about|bde)\.html$|assets(?:/|$)|data(?:/|$)) - [L]
 RewriteCond %{REQUEST_FILENAME} !-f [OR]
 RewriteCond %{REQUEST_URI} ^\/(js\/(main\.js|boostrap\.min\.js)|css\/(\d+\.css|common\.css|site\.css|bootstrap\.min\.css))$
 RewriteCond %{REQUEST_FILENAME} !-d

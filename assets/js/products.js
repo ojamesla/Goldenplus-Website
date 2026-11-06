@@ -5,7 +5,7 @@
     const cardTargets = document.querySelectorAll('[data-product-cards]');
     const comparisonTarget = document.querySelector('[data-product-comparison]');
     const detailTarget = document.getElementById('product-body');
-    const selectedId = new URLSearchParams(window.location.search).get('id');
+    const selectedId = window.GoldenplusRoutes.id('products');
 
     function el(tag, className, text) {
         const node = document.createElement(tag);
@@ -16,7 +16,7 @@
 
     function productLink(item, label, className) {
         const link = el('a', className || 'text-link', label);
-        link.href = `product.html?id=${encodeURIComponent(item.id)}`;
+        link.href = window.GoldenplusRoutes.url(`product.html?id=${encodeURIComponent(item.id)}`);
         return link;
     }
 
@@ -144,7 +144,7 @@
         }
     }
 
-    fetch('data/products.json', { cache: 'no-cache' })
+    fetch(new URL('data/products.json', document.baseURI), { cache: 'no-cache' })
         .then(response => {
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             return response.json();

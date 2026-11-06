@@ -6,10 +6,19 @@
 <meta content="#07182c" name="theme-color"/>
 <meta content="News, product updates, tutorials, sample projects and development plans from Goldenplus Electronics." name="description"/>
 <title>News &amp; Updates | Goldenplus Electronics</title>
+<!-- Set the asset base before loading styles/scripts on nested production URLs. -->
+<script>
+if (/^(www\.)?goldenplus-elec\.com\.tw$/i.test(window.location.hostname)) {
+    var siteBase = document.createElement('base');
+    siteBase.href = '/';
+    document.head.appendChild(siteBase);
+}
+</script>
 <link href="assets/images/goldenplus-mark.png" rel="icon" type="image/png"/>
 <link href="assets/css/style.css?v=153a642145fe" rel="stylesheet"/>
+<script defer src="assets/js/routes.js?v=4fd7adfabd20"></script>
 <script defer="" src="assets/js/main.js?v=837a102c98b4"></script>
-<script defer="True" src="assets/js/news.js?v=2e39e9372ec8"></script></head>
+<script defer="True" src="assets/js/news.js?v=5d70c9dbed1f"></script></head>
 <body><a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header" id="top">
 <div class="container nav-inner">

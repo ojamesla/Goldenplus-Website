@@ -6,8 +6,17 @@
 <meta content="#07182c" name="theme-color"/>
 <meta content="Our history since 2008: LED lighting, embedded TFT display technology, and visual HMI development." name="description"/>
 <title>About Us | Goldenplus Electronics</title>
+<!-- Set the asset base before loading styles/scripts on nested production URLs. -->
+<script>
+if (/^(www\.)?goldenplus-elec\.com\.tw$/i.test(window.location.hostname)) {
+    var siteBase = document.createElement('base');
+    siteBase.href = '/';
+    document.head.appendChild(siteBase);
+}
+</script>
 <link href="assets/images/goldenplus-mark.png" rel="icon" type="image/png"/>
 <link href="assets/css/style.css?v=153a642145fe" rel="stylesheet"/>
+<script defer src="assets/js/routes.js?v=4fd7adfabd20"></script>
 <script defer="" src="assets/js/main.js?v=837a102c98b4"></script>
 </head>
 <body><a class="skip-link" href="#main">Skip to content</a>

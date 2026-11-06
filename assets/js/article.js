@@ -6,7 +6,7 @@
     const category = document.getElementById('article-category');
     const summary = document.getElementById('article-summary');
     const body = document.getElementById('article-body');
-    const id = new URLSearchParams(window.location.search).get('id');
+    const id = window.GoldenplusRoutes.id('news');
 
     function el(tag, className, value) {
         const node = document.createElement(tag);
@@ -99,7 +99,7 @@
         return;
     }
 
-    fetch('data/news.json', { cache: 'no-cache' })
+    fetch(new URL('data/news.json', document.baseURI), { cache: 'no-cache' })
         .then(response => {
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             return response.json();

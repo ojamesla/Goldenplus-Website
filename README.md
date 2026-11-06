@@ -60,3 +60,13 @@ Deploy from `feat/product-catalog` while this pull request is open; `main` does 
 The server configurations prefer `index.html` over old PHP homepages. Catalog paths are excluded from the legacy SiteBuilder fallback, so a missing `product.html` returns 404 instead of executing legacy PHP. This does not restore a missing file: upload the actual `product.html`. If an existing static file still returns 500, inspect the hosting error log.
 
 After deployment, check `/`, `/products.html`, `/product.html?id=pico`, `/product.html?id=aeternus`, `/product.html?id=omni`, `/news.html` and `/data/products.json`. Confirm the new homepage title, rendered tables, brochure downloads and cache response headers.
+
+## Production-only clean URLs
+
+The production domains `goldenplus-elec.com.tw` and `www.goldenplus-elec.com.tw` use `/products`, `/products/pico`, `/products/aeternus`, `/products/omni`, `/news`, `/news/ARTICLE_ID`, `/about` and `/bde`. Upload the HTML, JavaScript and matching `.htaccess` (Apache) or `web.config` (IIS with URL Rewrite installed) together. The site must be installed at the domain root.
+
+Server rules internally serve the existing HTML templates. Direct requests to supported old `.html` URLs redirect permanently to the new routes, with article/product IDs moved from the query string into the path. Detail IDs use letters, digits, underscores and hyphens. Keep new News IDs in this format; other IDs retain their existing query-string URLs. Canonical detail redirects discard the old query string. A trailing slash on supported routes redirects to the same route without it. Existing legacy News redirect files remain usable.
+
+A small head bootstrap sets the production asset base to `/` before styles/scripts load. `assets/js/routes.js` converts navigation and dynamic product/news links, reads IDs from clean paths, and preserves in-page anchors. Data and article images resolve from the site base, so nested routes do not request `/products/assets` or `/news/data` by mistake.
+
+On GitHub Pages and localhost, the production host check is false: the original `.html?id=...` URLs and repository-relative assets continue working. GitHub Pages does not apply the server rewrite files. Clean paths are therefore tested in production hosting; refreshing a nested URL requires the matching server rules and template files to be present.
