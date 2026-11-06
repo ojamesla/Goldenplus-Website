@@ -3,7 +3,7 @@
 // Only the production domain uses server-side clean URLs. GitHub Pages stays static.
 (function () {
     const production = /^(www\.)?goldenplus-elec\.com\.tw$/i.test(window.location.hostname);
-    const pages = { '/index.html': '/', '/products.html': '/products', '/news.html': '/news', '/about.html': '/about', '/bde.html': '/bde' };
+    const pages = { '/index.html': '/', '/products.html': '/products', '/news.html': '/news/', '/about.html': '/about', '/bde.html': '/bde' };
 
     function url(value) {
         const target = new URL(value, document.baseURI);
