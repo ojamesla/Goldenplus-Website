@@ -81,6 +81,40 @@
         comparisonTarget.appendChild(el('p', 'catalog-note', 'Need a 5-inch or 7-inch platform, or another configuration? Contact us with your application requirements. Availability depends on the product family and selected model.'));
     }
 
+    function renderGallery(item) {
+        // Photos are optional. Families without images retain their text/table layout.
+        if (!Array.isArray(item.gallery)) return null;
+        const photos = item.gallery.filter(photo => photo && /^assets\/images\/[a-z0-9-]+\.(webp|png|jpg|jpeg)$/.test(photo.src));
+        if (!photos.length) return null;
+        const section = el('section', 'product-block');
+        section.id = 'product-gallery';
+        section.appendChild(el('p', 'section-kicker', 'PRODUCT GALLERY'));
+        section.appendChild(el('h2', '', 'See the hardware.'));
+        section.appendChild(el('p', 'catalog-note', 'Explore product photos and example interfaces. Select a photo to view it at full size.'));
+        const grid = el('div', 'product-gallery');
+        photos.forEach(photo => {
+            const figure = el('figure', photo.featured ? 'product-gallery-item is-featured' : 'product-gallery-item');
+            const link = el('a', 'product-gallery-link');
+            link.href = photo.src;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.setAttribute('aria-label', `View full-size photo: ${photo.caption || item.name}`);
+            const image = el('img');
+            image.src = photo.src;
+            image.alt = photo.alt || photo.caption || item.name;
+            image.loading = 'lazy';
+            image.decoding = 'async';
+            if (Number.isInteger(photo.width) && photo.width > 0) image.width = photo.width;
+            if (Number.isInteger(photo.height) && photo.height > 0) image.height = photo.height;
+            link.appendChild(image);
+            figure.appendChild(link);
+            figure.appendChild(el('figcaption', '', photo.caption || item.name));
+            grid.appendChild(figure);
+        });
+        section.appendChild(grid);
+        return section;
+    }
+
     function renderDetail(item) {
         document.title = `${item.name} | Goldenplus Electronics`;
         document.querySelector('meta[name="description"]').content = item.summary;
@@ -107,6 +141,8 @@
         configs.appendChild(table(item.models.caption, item.models.columns, item.models.rows));
         configs.appendChild(el('p', 'catalog-note', item.note));
         fragment.appendChild(configs);
+        const gallery = renderGallery(item);
+        if (gallery) fragment.appendChild(gallery);
         const applications = el('section', 'product-block');
         applications.appendChild(el('p', 'section-kicker', 'APPLICATION IDEAS'));
         applications.appendChild(el('h2', '', 'Build around your equipment.'));

@@ -78,3 +78,7 @@ Do not redirect `/news/` to `/news`: Apache automatically adds the slash for the
 ### Hosting compatibility
 
 The News directory rewrite uses `[L]`, which is supported by older Apache hosts, instead of the Apache 2.4-only `[END]` flag. If installing server configuration causes all paths, including static CSS/JS, to return HTTP 500, restore the previous working `.htaccess` first and inspect the host error log. A generic HTTP 500 response alone cannot identify the exact configuration directive.
+
+## Optional product photos
+
+Pico's detail page includes the original lineup image and four individual product photos. The optional `gallery` array in `data/products.json` contains `src`, `alt`, `caption`, intrinsic `width`/`height`, and an optional `featured` flag for a full-width image. Supported sources are local images directly under `assets/images/` with lowercase letters, digits or hyphens and a webp/png/jpg/jpeg extension. Photos link to their original files in a new tab. Families without a gallery retain their existing text/table layout.

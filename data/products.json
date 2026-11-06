@@ -79,7 +79,49 @@
       "format": "Embedded module",
       "integration": "Build into your equipment",
       "focus": "Screen format and target board"
-    }
+    },
+    "gallery": [
+      {
+        "src": "assets/images/pico-lineup.webp",
+        "alt": "Pico Display family with 2.4, 2.8, 3.5 and 4.3-inch screens",
+        "caption": "Pico Display family overview",
+        "width": 1150,
+        "height": 647,
+        "featured": true
+      },
+      {
+        "src": "assets/images/pico-24.webp",
+        "alt": "2.4-inch Pico Display board with a medical interface example",
+        "caption": "2.4 inch · 240 × 320",
+        "width": 420,
+        "height": 630,
+        "featured": false
+      },
+      {
+        "src": "assets/images/pico-28.webp",
+        "alt": "2.8-inch Pico Display board with a speed gauge example",
+        "caption": "2.8 inch · 240 × 320",
+        "width": 420,
+        "height": 630,
+        "featured": false
+      },
+      {
+        "src": "assets/images/pico-35.webp",
+        "alt": "3.5-inch Pico Display board with a control interface example",
+        "caption": "3.5 inch · 320 × 480",
+        "width": 420,
+        "height": 630,
+        "featured": false
+      },
+      {
+        "src": "assets/images/pico-43.webp",
+        "alt": "4.3-inch Pico Display board with a coffee selection interface example",
+        "caption": "4.3 inch · 480 × 272",
+        "width": 420,
+        "height": 280,
+        "featured": false
+      }
+    ]
   },
   {
     "id": "aeternus",
