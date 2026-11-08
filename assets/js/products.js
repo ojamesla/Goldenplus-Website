@@ -165,7 +165,7 @@
         });
         downloads.appendChild(links);
         downloads.appendChild(el('p', 'catalog-note', 'Brochures describe the product range. Confirm model-specific specifications, availability and software compatibility with Goldenplus before ordering.'));
-        fragment.appendChild(downloads);
+        if (links.childElementCount) fragment.appendChild(downloads);
         detailTarget.replaceChildren(fragment);
     }
 
@@ -186,7 +186,7 @@
             return response.json();
         })
         .then(items => {
-            if (!Array.isArray(items) || items.length !== 3 || !items.every(item => item && /^[a-z]+$/.test(item.id) && Array.isArray(item.highlights))) throw new Error('Invalid product catalog');
+            if (!Array.isArray(items) || !items.length || !items.every(item => item && /^[a-z]+$/.test(item.id) && Array.isArray(item.highlights))) throw new Error('Invalid product catalog');
             if (detailTarget) {
                 const item = items.find(entry => entry.id === selectedId);
                 if (!item) {

@@ -124,6 +124,65 @@
     ]
   },
   {
+    "id": "infinite",
+    "name": "Infinite Display",
+    "category": "STM32H750 display platform",
+    "tagline": "A display platform for larger embedded interfaces.",
+    "summary": "An STM32H750-based display family with 5-, 7- and 8-inch screen formats.",
+    "audience": "Equipment developers selecting a display for an embedded operator interface.",
+    "highlights": [
+      "STM32H750 microcontroller",
+      "5-, 7- and 8-inch screen formats",
+      "800 × 480, 800 × 600 and 1024 × 600 resolutions"
+    ],
+    "facts": [
+      [
+        "Microcontroller",
+        "STM32H750"
+      ],
+      [
+        "Display resolutions",
+        "800 × 480 / 800 × 600 / 1024 × 600"
+      ],
+      [
+        "Previously used panel",
+        "4.6-inch 華凌 panel, 800 × 320"
+      ]
+    ],
+    "models": {
+      "caption": "Infinite Display screen formats",
+      "columns": [
+        "Screen size",
+        "Resolution"
+      ],
+      "rows": [
+        [
+          "5 inch",
+          "800 × 480"
+        ],
+        [
+          "7 inch",
+          "800 × 480"
+        ],
+        [
+          "8 inch",
+          "Confirm for the selected panel"
+        ]
+      ]
+    },
+    "note": "Contact us to confirm panel availability and size options for 800 × 600 and 1024 × 600. The 4.6-inch 華凌 panel (800 × 320) was used previously.",
+    "applications": [
+      "Embedded operator panels",
+      "Equipment status displays"
+    ],
+    "downloads": [],
+    "comparison": {
+      "format": "STM32H750 display platform",
+      "integration": "Integrate a display into your equipment",
+      "focus": "Screen size and resolution"
+    }
+  },
+  {
     "id": "aeternus",
     "name": "Aeternus Display",
     "category": "Enclosed HMI",
