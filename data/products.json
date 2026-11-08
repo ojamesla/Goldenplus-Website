@@ -232,7 +232,7 @@
       "focus": "Screen size and resolution"
     },
     "io": {
-      "caption": "Infinite Display I/O counts by screen size",
+      "caption": "Infinite Display default I/O configuration by screen size",
       "columns": [
         "Screen size",
         "GPIO",
