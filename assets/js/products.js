@@ -145,7 +145,7 @@
             const io = el('section', 'product-block');
             io.appendChild(el('p', 'section-kicker', 'HARDWARE INTERFACES'));
             io.appendChild(el('h2', '', 'I/O and communication.'));
-            io.appendChild(table(item.io.caption, ['Interface', 'Channels or bus', 'Signal mapping'], item.io.rows));
+            io.appendChild(table(item.io.caption, item.io.columns, item.io.rows));
             io.appendChild(el('p', 'catalog-note', item.io.note));
             fragment.appendChild(io);
         }

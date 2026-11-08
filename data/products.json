@@ -121,7 +121,53 @@
         "height": 280,
         "featured": false
       }
-    ]
+    ],
+    "io": {
+      "caption": "Pico Display I/O counts by screen size",
+      "columns": [
+        "Screen size",
+        "GPIO",
+        "PWM outputs",
+        "ADC inputs",
+        "I²C buses",
+        "Communication interfaces"
+      ],
+      "rows": [
+        [
+          "2.4 inch",
+          "To be confirmed",
+          "To be confirmed",
+          "To be confirmed",
+          "To be confirmed",
+          "To be confirmed"
+        ],
+        [
+          "2.8 inch",
+          "To be confirmed",
+          "To be confirmed",
+          "To be confirmed",
+          "To be confirmed",
+          "To be confirmed"
+        ],
+        [
+          "3.5 inch",
+          "5",
+          "5",
+          "5",
+          "1",
+          "UART: 2 (1 assigned to RS-485); CAN: 1; Ethernet (W5500): 1"
+        ],
+        [
+          "4.3 inch",
+          "To be confirmed",
+          "To be confirmed",
+          "To be confirmed",
+          "To be confirmed",
+          "To be confirmed"
+        ]
+      ],
+      "note": "Counts are based on the BDE profile for the 3.5-inch model. Some functions share pins, so the counts cannot be added together or assumed to be available simultaneously."
+    }
   },
   {
     "id": "infinite",
@@ -142,11 +188,7 @@
       ],
       [
         "Display resolutions",
-        "800 × 480 / 800 × 600 / 1024 × 600"
-      ],
-      [
-        "Previously used panel",
-        "4.6-inch 華凌 panel, 800 × 320"
+        "800 × 320 / 800 × 480 / 800 × 600 / 1024 × 600"
       ]
     ],
     "models": {
@@ -166,11 +208,11 @@
         ],
         [
           "8 inch",
-          "Confirm for the selected panel"
+          "800 × 600"
         ]
       ]
     },
-    "note": "Contact us to confirm panel availability and size options for 800 × 600 and 1024 × 600. The 4.6-inch 華凌 panel (800 × 320) was used previously.",
+    "note": "Contact us to confirm panel availability and size options for 1024 × 600.",
     "applications": [
       "Embedded operator panels",
       "Equipment status displays"
@@ -182,60 +224,42 @@
       "focus": "Screen size and resolution"
     },
     "io": {
-      "caption": "BDE device profile: STM32 7-inch (800 × 480)",
+      "caption": "Infinite Display I/O counts by screen size",
+      "columns": [
+        "Screen size",
+        "GPIO",
+        "PWM outputs",
+        "ADC inputs",
+        "I²C buses",
+        "Communication interfaces"
+      ],
       "rows": [
         [
-          "GPIO",
-          "8 pins (GP1–GP8)",
-          "GP1 → PD11, GP2 → PD12, GP3 → PD13, GP4 → PA3, GP5 → PA4, GP6 → PF10, GP7 → PA1, GP8 → PE3"
+          "5 inch",
+          "8",
+          "6",
+          "6",
+          "1",
+          "Wi-Fi: 1; RS-485: 1; CAN: 1; Ethernet (W5500): 1; console: 1"
         ],
         [
-          "PWM",
-          "6 outputs (PWM1–PWM6)",
-          "PWM1 → PA2, PWM2 → PB0, PWM3 → PA15, PWM4 → PB3, PWM5 → PH6, PWM6 → PC7"
+          "7 inch",
+          "8",
+          "6",
+          "6",
+          "1",
+          "Wi-Fi: 1; RS-485: 1; CAN: 1; Ethernet (W5500): 1; console: 1"
         ],
         [
-          "ADC",
-          "6 inputs (ADC0–ADC5)",
-          "ADC0 → PC2, ADC1 → PA6, ADC2 → PC4, ADC3 → PB1, ADC4 → PC0, ADC5 → PC1"
-        ],
-        [
-          "I²C",
-          "1 bus",
-          "SCL1 → PB6, SDA1 → PB7"
-        ],
-        [
-          "Wi-Fi module",
-          "UART1 + enable/reset",
-          "TX1 → PF7, RX1 → PA8, EN → PC3, RST → PC5"
-        ],
-        [
-          "RS-485",
-          "UART2",
-          "RS485_TX → PJ8, RS485_RX → PJ9"
-        ],
-        [
-          "CAN module",
-          "UART4",
-          "CAN_UART_TX → PB9, CAN_UART_RX → PB8"
-        ],
-        [
-          "Ethernet (W5500)",
-          "SPI + reset",
-          "W5500_CLK → PA5, W5500_CS → PG10, W5500_DO → PG9, W5500_DI → PB5, W5500_RST → PC6"
-        ],
-        [
-          "Console",
-          "UART0",
-          "TX → PB13, RX → PB12"
-        ],
-        [
-          "LCD backlight",
-          "PWM0 (reserved)",
-          "PWM0 → PK1"
+          "8 inch",
+          "To be confirmed",
+          "To be confirmed",
+          "To be confirmed",
+          "To be confirmed",
+          "To be confirmed"
         ]
       ],
-      "note": "Pin assignments are from the BDE profile stm32_800x480 and apply to that configuration. Confirm connector pinout and available interfaces for other panel configurations. PWM0 is reserved for the LCD backlight."
+      "note": "The 5- and 7-inch 800 × 480 presets share the same BDE device profile. The PWM count excludes the LCD backlight. The 8-inch I/O counts are pending confirmation."
     }
   },
   {
