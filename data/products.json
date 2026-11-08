@@ -174,11 +174,11 @@
     "name": "Infinite Display",
     "category": "STM32H750 display platform",
     "tagline": "A display platform for larger embedded interfaces.",
-    "summary": "An STM32H750-based display family with 5-, 7- and 8-inch screen formats.",
+    "summary": "An STM32H750-based display family with screen sizes from 4.6 to 10.1 inches.",
     "audience": "Equipment developers selecting a display for an embedded operator interface.",
     "highlights": [
       "STM32H750 microcontroller",
-      "5-, 7- and 8-inch screen formats",
+      "4.6-, 5-, 7-, 8- and 10.1-inch screen formats",
       "800 × 480, 800 × 600 and 1024 × 600 resolutions"
     ],
     "facts": [
@@ -199,6 +199,10 @@
       ],
       "rows": [
         [
+          "4.6 inch",
+          "800 × 320"
+        ],
+        [
           "5 inch",
           "800 × 480"
         ],
@@ -209,10 +213,14 @@
         [
           "8 inch",
           "800 × 600"
+        ],
+        [
+          "10.1 inch",
+          "1024 × 600"
         ]
       ]
     },
-    "note": "Contact us to confirm panel availability and size options for 1024 × 600.",
+    "note": "Contact us to confirm panel availability for each configuration.",
     "applications": [
       "Embedded operator panels",
       "Equipment status displays"
@@ -234,6 +242,14 @@
         "Communication interfaces"
       ],
       "rows": [
+        [
+          "4.6 inch",
+          "To be confirmed",
+          "To be confirmed",
+          "To be confirmed",
+          "To be confirmed",
+          "To be confirmed"
+        ],
         [
           "5 inch",
           "8",
@@ -257,9 +273,17 @@
           "To be confirmed",
           "To be confirmed",
           "To be confirmed"
+        ],
+        [
+          "10.1 inch",
+          "To be confirmed",
+          "To be confirmed",
+          "To be confirmed",
+          "To be confirmed",
+          "To be confirmed"
         ]
       ],
-      "note": "The 5- and 7-inch 800 × 480 presets share the same BDE device profile. The PWM count excludes the LCD backlight. The 8-inch I/O counts are pending confirmation."
+      "note": "The 5- and 7-inch 800 × 480 presets share the same BDE device profile. The PWM count excludes the LCD backlight. I/O counts for the 4.6-, 8- and 10.1-inch configurations are pending confirmation."
     }
   },
   {
