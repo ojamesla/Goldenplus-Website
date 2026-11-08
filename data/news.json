@@ -7,7 +7,7 @@
                 "type": "heading"
             },
             {
-                "text": "Goldenplus Electronics showcased embedded human-machine interface (HMI) technology at Taiwan Smart Agriweek 2026. Our exhibition displays included the Omni HMI and Omni PLC families, Aeternus HMI products, and Brilliant Display Editor (BDE), our visual GUI development environment.",
+                "text": "Goldenplus Electronics showcased embedded human-machine interface (HMI) technology at Taiwan Smart Agriweek 2026. Our exhibition displays included the Omni HMI and Omni PLC families, Aeternus HMI products, and Brilliant Development Environment (BDE), our visual GUI development environment.",
                 "type": "paragraph"
             },
             {
@@ -22,7 +22,7 @@
                 "items": [
                     "Omni Display: HMI and PLC-oriented interface systems presented with integrated control features.",
                     "Aeternus Display: embedded displays for user-interface and peripheral integration applications.",
-                    "Brilliant Display Editor: graphical interface design and software development workflow.",
+                    "Brilliant Development Environment: graphical interface design and software development workflow.",
                     "Application demonstrations: interactive control panels and prototype equipment displayed at the booth."
                 ],
                 "type": "list"
@@ -79,7 +79,7 @@
         "linkLabel": "View release",
         "status": "Released",
         "summary": "The BDE Windows installer is available through our official GitHub Releases page.",
-        "title": "Brilliant Display Editor v2.0.3.2 Available",
+        "title": "Brilliant Development Environment v2.0.3.2 Available",
         "url": "https://github.com/ojamesla/BDE-Releases/releases/tag/v2.0.3.2"
     },
     {

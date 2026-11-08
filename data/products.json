@@ -4,7 +4,7 @@
     "name": "Pico Display",
     "category": "Embedded display modules",
     "tagline": "A compact starting point for your embedded interface.",
-    "summary": "Integrate a display module into your own enclosure and build the interface with Brilliant Display Editor.",
+    "summary": "Integrate a display module into your own enclosure and build the interface with Brilliant Development Environment.",
     "audience": "Embedded developers and equipment designers integrating a display into their own product.",
     "highlights": [
       "Compact display formats for custom equipment",
@@ -18,7 +18,7 @@
       ],
       [
         "Development software",
-        "Brilliant Display Editor"
+        "Brilliant Development Environment"
       ],
       [
         "Integration",
