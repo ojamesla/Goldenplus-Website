@@ -104,48 +104,20 @@
     },
     {
         "category": "Roadmap",
+        "content": [
+        ],
         "date": "2026-11-04",
+        "featured": false,
+        "gallery": [
+        ],
         "id": "simulator-roadmap",
+        "image": "",
+        "imageAlt": "",
         "linkLabel": "About BDE",
         "status": "In Development",
         "summary": "Desktop simulation is being developed and evaluated. It is not part of the current BDE Windows release.",
         "title": "BDE Desktop Simulator Development",
-        "url": "bde.html"
-    },
-    {
-        "category": "Company News",
-        "content": [
-            {
-                "text": "News Publishing Test",
-                "type": "heading"
-            },
-            {
-                "text": "Goldenplus Electronics is testing a new Qt-based News Manager for website content management and publishing.",
-                "type": "paragraph"
-            },
-            {
-                "items": [
-                    "Create and edit news articles",
-                    "Upload cover images and photo galleries",
-                    "Publish website updates using FTPS",
-                    "Manage news content using JSON"
-                ],
-                "type": "list"
-            }
-        ],
-        "date": "2026-11-05",
-        "featured": false,
-        "gallery": [
-            "assets/images/news/test-news-001-ca1a91ec.jpg"
-        ],
-        "id": "test-news-001",
-        "image": "assets/images/news/test-news-001-8ebae15f-cover.jpg",
-        "imageAlt": "Goldenplus Electronics news publishing test",
-        "linkLabel": "Read more",
-        "status": "Released",
-        "summary": "Testing the new Goldenplus News Manager for publishing website updates.",
-        "title": "Goldenplus News Publishing Test",
-        "url": "article.html?id=test-news-001"
+        "url": "article.html?id=simulator-roadmap"
     },
     {
         "category": "Company News",
@@ -188,8 +160,8 @@
             "assets/images/news/medical-monitor-data-integration-c0ac8d21.jpg"
         ],
         "id": "medical-monitor-data-integration",
-        "image": "",
-        "imageAlt": "",
+        "image": "assets/images/news/medical-monitor-data-integration-3c58ea95-cover.jpg",
+        "imageAlt": "Goldenplus Delivers Medical Monitoring Data Integration Solution",
         "linkLabel": "Read more",
         "status": "Released",
         "summary": "Goldenplus has delivered a customized solution integrating RS232 data acquisition, ECG waveform processing, and Ethernet-based data transmission, enabling customers to collect, visualize, and analyze monitoring data through their own server platforms.",
