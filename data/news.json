@@ -7,7 +7,7 @@
                 "type": "heading"
             },
             {
-                "text": "Goldenplus Electronics showcased embedded human-machine interface (HMI) technology at Taiwan Smart Agriweek 2026. Our exhibition displays included the Omni HMI and Omni PLC families, Aeternus HMI products, and Brilliant Display Editor (BDE), our visual GUI development environment.",
+                "text": "Goldenplus Electronics showcased embedded human-machine interface (HMI) technology at Taiwan Smart Agriweek 2026. Our exhibition displays included the Omni HMI and Omni PLC families, Aeternus HMI products, and Brilliant Development Environment (BDE), our visual GUI development environment.",
                 "type": "paragraph"
             },
             {
@@ -22,7 +22,7 @@
                 "items": [
                     "Omni Display: HMI and PLC-oriented interface systems presented with integrated control features.",
                     "Aeternus Display: embedded displays for user-interface and peripheral integration applications.",
-                    "Brilliant Display Editor: graphical interface design and software development workflow.",
+                    "Brilliant Development Environment: graphical interface design and software development workflow.",
                     "Application demonstrations: interactive control panels and prototype equipment displayed at the booth."
                 ],
                 "type": "list"
@@ -79,7 +79,7 @@
         "linkLabel": "View release",
         "status": "Released",
         "summary": "The BDE Windows installer is available through our official GitHub Releases page.",
-        "title": "Brilliant Display Editor v2.0.3.2 Available",
+        "title": "Brilliant Development Environment v2.0.3.2 Available",
         "url": "https://github.com/ojamesla/BDE-Releases/releases/tag/v2.0.3.2"
     },
     {
@@ -104,47 +104,68 @@
     },
     {
         "category": "Roadmap",
+        "content": [
+        ],
         "date": "2026-11-04",
+        "featured": false,
+        "gallery": [
+        ],
         "id": "simulator-roadmap",
+        "image": "",
+        "imageAlt": "",
         "linkLabel": "About BDE",
         "status": "In Development",
         "summary": "Desktop simulation is being developed and evaluated. It is not part of the current BDE Windows release.",
         "title": "BDE Desktop Simulator Development",
-        "url": "bde.html"
+        "url": "article.html?id=simulator-roadmap"
     },
     {
         "category": "Company News",
         "content": [
             {
-                "text": "News Publishing Test",
+                "text": "Customized Medical Monitoring Data Integration",
                 "type": "heading"
             },
             {
-                "text": "Goldenplus Electronics is testing a new Qt-based News Manager for website content management and publishing.",
+                "text": "Goldenplus recently delivered a customized embedded data acquisition and communication solution for a customer project.\n\nThe solution connects to external monitoring equipment through an RS232 interface, receives and processes binary data packets, and transmits monitoring information to a remote server over Ethernet.\n\nThis enables customers to integrate ECG waveform data and related monitoring parameters into their own software platforms for visualization, historical review, and further analysis.",
                 "type": "paragraph"
             },
             {
+                "text": "Key Features",
+                "type": "heading"
+            },
+            {
                 "items": [
-                    "Create and edit news articles",
-                    "Upload cover images and photo galleries",
-                    "Publish website updates using FTPS",
-                    "Manage news content using JSON"
+                    "RS232 communication for external equipment data acquisition",
+                    "Binary packet parsing and frame integrity verification",
+                    "ECG waveform data acquisition and processing",
+                    "Ethernet connectivity and HTTP API data transmission",
+                    "Real-time communication and upload status monitoring",
+                    "Server-side data storage and historical waveform visualization",
+                    "Integration with customer-developed web applications and analysis systems"
                 ],
                 "type": "list"
+            },
+            {
+                "text": "This project demonstrates Goldenplus's capabilities in embedded system development, hardware communication interfaces, and end-to-end data integration.\n\nGoldenplus provides customized solutions for industrial and specialized equipment applications, helping customers connect existing devices to modern network-based monitoring and data management platforms.",
+                "type": "paragraph"
             }
         ],
-        "date": "2026-11-05",
-        "featured": false,
+        "date": "2026-11-12",
+        "featured": true,
         "gallery": [
-            "assets/images/news/test-news-001-ca1a91ec.jpg"
+            "assets/images/news/medical-monitor-data-integration-c57f17a1.jpg",
+            "assets/images/news/medical-monitor-data-integration-18957e1c.jpg",
+            "assets/images/news/medical-monitor-data-integration-567ddd03.jpg",
+            "assets/images/news/medical-monitor-data-integration-c0ac8d21.jpg"
         ],
-        "id": "test-news-001",
-        "image": "assets/images/news/test-news-001-8ebae15f-cover.jpg",
-        "imageAlt": "Goldenplus Electronics news publishing test",
+        "id": "medical-monitor-data-integration",
+        "image": "assets/images/news/medical-monitor-data-integration-3c58ea95-cover.jpg",
+        "imageAlt": "Goldenplus Delivers Medical Monitoring Data Integration Solution",
         "linkLabel": "Read more",
         "status": "Released",
-        "summary": "Testing the new Goldenplus News Manager for publishing website updates.",
-        "title": "Goldenplus News Publishing Test",
-        "url": "article.html?id=test-news-001"
+        "summary": "Goldenplus has delivered a customized solution integrating RS232 data acquisition, ECG waveform processing, and Ethernet-based data transmission, enabling customers to collect, visualize, and analyze monitoring data through their own server platforms.",
+        "title": "Goldenplus Delivers Medical Monitoring Data Integration Solution",
+        "url": "article.html?id=medical-monitor-data-integration"
     }
 ]

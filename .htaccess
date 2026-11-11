@@ -8,12 +8,22 @@ deny from 34.55.73.25
 <IfModule mod_expires.c>
 	ExpiresActive On
 	ExpiresDefault A0
+	# Revalidate pages and editable data on every visit.
+	ExpiresByType text/html A0
+	ExpiresByType application/json A0
 	ExpiresByType image/gif A691200
 	ExpiresByType image/png A691200
 	ExpiresByType image/jpeg A691200
-	ExpiresByType text/css A691200
-	ExpiresByType text/javascript A691200
-	ExpiresByType application/javascript A691200
+	ExpiresByType text/css A0
+	ExpiresByType text/javascript A0
+	ExpiresByType application/javascript A0
+</IfModule>
+
+# Keep validators (ETag / Last-Modified), but do not reuse stale site files.
+<IfModule mod_headers.c>
+    <FilesMatch "\.(html|css|js|json)$">
+        Header set Cache-Control "no-cache, max-age=0, must-revalidate"
+    </FilesMatch>
 </IfModule>
 
 ErrorDocument 401 "Unauthorized"
@@ -31,7 +41,43 @@ RewriteRule ^\.well-known/.+ - [L]
 
 #### PERSISTENT CONTENT END ####
 
-DirectoryIndex index.php index.cgi index.html
+# Prefer the new static homepage over a leftover SiteBuilder PHP entry point.
+DirectoryIndex index.html index.php index.cgi
+# News is an existing directory: keep its trailing slash to avoid DirectorySlash loops.
+RewriteCond %{HTTP_HOST} ^(?:www\.)?goldenplus-elec\.com\.tw(?::[0-9]+)?$ [NC]
+RewriteCond %{THE_REQUEST} \s/+news\.html[?\s] [NC]
+RewriteRule ^news\.html$ /news/ [R=301,L]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?goldenplus-elec\.com\.tw(?::[0-9]+)?$ [NC]
+RewriteRule ^news$ /news/ [R=301,L]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?goldenplus-elec\.com\.tw(?::[0-9]+)?$ [NC]
+# Use the compatible L flag; END requires Apache 2.4 or newer.
+RewriteRule ^news/$ news.html [L]
+# Clean URLs are enabled only for the production domain.
+RewriteCond %{HTTP_HOST} ^(?:www\.)?goldenplus-elec\.com\.tw(?::[0-9]+)?$ [NC]
+RewriteCond %{THE_REQUEST} \s/+product\.html[?\s] [NC]
+RewriteCond %{QUERY_STRING} (?:^|&)id=([A-Za-z0-9_-]+)(?:&|$)
+RewriteRule ^product\.html$ /products/%1? [R=301,L]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?goldenplus-elec\.com\.tw(?::[0-9]+)?$ [NC]
+RewriteCond %{THE_REQUEST} \s/+article\.html[?\s] [NC]
+RewriteCond %{QUERY_STRING} (?:^|&)id=([A-Za-z0-9_-]+)(?:&|$)
+RewriteRule ^article\.html$ /news/%1? [R=301,L]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?goldenplus-elec\.com\.tw(?::[0-9]+)?$ [NC]
+RewriteCond %{THE_REQUEST} \s/+index\.html[?\s] [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?goldenplus-elec\.com\.tw(?::[0-9]+)?$ [NC]
+RewriteCond %{THE_REQUEST} \s/+(?:products|about|bde)\.html[?\s] [NC]
+RewriteRule ^(products|about|bde)\.html$ /$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?goldenplus-elec\.com\.tw(?::[0-9]+)?$ [NC]
+RewriteRule ^((?:products)(?:/[A-Za-z0-9_-]+)?|news/[A-Za-z0-9_-]+|about|bde)/$ /$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?goldenplus-elec\.com\.tw(?::[0-9]+)?$ [NC]
+RewriteRule ^(products|about|bde)$ $1.html [L]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?goldenplus-elec\.com\.tw(?::[0-9]+)?$ [NC]
+RewriteRule ^products/[A-Za-z0-9_-]+$ product.html [L]
+RewriteCond %{HTTP_HOST} ^(?:www\.)?goldenplus-elec\.com\.tw(?::[0-9]+)?$ [NC]
+RewriteRule ^news/[A-Za-z0-9_-]+$ article.html [L]
+
+# Missing catalog files must return 404 instead of entering legacy PHP code.
+RewriteRule ^(?:(?:index|product|products|article|news|about|bde)\.html$|assets(?:/|$)|data(?:/|$)) - [L]
 RewriteCond %{REQUEST_FILENAME} !-f [OR]
 RewriteCond %{REQUEST_URI} ^\/(js\/(main\.js|boostrap\.min\.js)|css\/(\d+\.css|common\.css|site\.css|bootstrap\.min\.css))$
 RewriteCond %{REQUEST_FILENAME} !-d

@@ -6,10 +6,19 @@
 <meta content="#07182c" name="theme-color"/>
 <meta content="News, product updates, tutorials, sample projects and development plans from Goldenplus Electronics." name="description"/>
 <title>News &amp; Updates | Goldenplus Electronics</title>
+<!-- Set the asset base before loading styles/scripts on nested production URLs. -->
+<script>
+if (/^(www\.)?goldenplus-elec\.com\.tw$/i.test(window.location.hostname)) {
+    var siteBase = document.createElement('base');
+    siteBase.href = '/';
+    document.head.appendChild(siteBase);
+}
+</script>
 <link href="assets/images/goldenplus-mark.png" rel="icon" type="image/png"/>
-<link href="assets/css/style.css" rel="stylesheet"/>
-<script defer="" src="assets/js/main.js"></script>
-<script defer="True" src="assets/js/news.js"></script></head>
+<link href="assets/css/style.css?v=1915b0144743" rel="stylesheet"/>
+<script defer src="assets/js/routes.js?v=c92b873f3d51"></script>
+<script defer="" src="assets/js/main.js?v=837a102c98b4"></script>
+<script defer="True" src="assets/js/news.js?v=5d70c9dbed1f"></script></head>
 <body><a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header" id="top">
 <div class="container nav-inner">
@@ -18,7 +27,7 @@
 <span><strong>GOLDENPLUS</strong><small>ELECTRONICS</small></span>
 </a>
 <button aria-controls="primary-nav" aria-expanded="false" aria-label="Open navigation" class="menu-toggle" type="button"><span></span><span></span><span></span></button>
-<nav aria-label="Main navigation" class="primary-nav" id="primary-nav"><a href="index.html#solutions">Solutions</a><a href="products.html">Display Hardware</a><a href="bde.html">BDE Software</a><a href="about.html">About Us</a><a href="index.html#resources">Resources</a><a aria-current="page" href="news.html">News</a><a class="nav-contact" href="index.html#contact">Contact us ↗</a></nav>
+<nav aria-label="Main navigation" class="primary-nav" id="primary-nav"><a href="index.html#solutions">Solutions</a><a href="products.html">Products</a><a href="bde.html">BDE Software</a><a href="about.html">About Us</a><a href="index.html#resources">Resources</a><a aria-current="page" href="news.html">News</a><a class="nav-contact" href="index.html#contact">Contact us ↗</a></nav>
 </div>
 </header>
 <main id="main">
@@ -46,5 +55,5 @@
 </section>
 <section class="section news-cta-section"><div class="container news-cta-inner"><div><p class="section-kicker">GET STARTED</p><h2>Build your next <span>embedded interface.</span></h2><p class="muted">Download BDE and explore editable demo projects.</p></div><div class="news-cta-links"><a class="btn btn-primary" href="https://github.com/ojamesla/BDE-Releases/releases/latest" rel="noopener noreferrer" target="_blank">Download BDE ↗</a><a class="text-link" href="https://github.com/ojamesla/BDE-Examples" rel="noopener noreferrer" target="_blank">Browse examples →</a></div></div></section>
 </main>
-<footer class="site-footer"><div class="container footer-main"><a class="brand" href="index.html"><img alt="" height="38" src="assets/images/goldenplus-mark.png" width="38"/><span><strong>GOLDENPLUS</strong><small>ELECTRONICS</small></span></a><div class="footer-links"><a href="news.html">News</a><a href="products.html">Hardware</a><a href="bde.html">BDE</a><a href="index.html#resources">Resources</a><a href="index.html#contact">Contact</a></div></div><div class="container footer-bottom"><span>© <span id="year">2026</span> Goldenplus Electronics. All rights reserved.</span><span>Embedded Display &amp; GUI Solutions</span></div></footer>
+<footer class="site-footer"><div class="container footer-main"><a class="brand" href="index.html"><img alt="" height="38" src="assets/images/goldenplus-mark.png" width="38"/><span><strong>GOLDENPLUS</strong><small>ELECTRONICS</small></span></a><div class="footer-links"><a href="news.html">News</a><a href="products.html">Products</a><a href="bde.html">BDE</a><a href="index.html#resources">Resources</a><a href="index.html#contact">Contact</a></div></div><div class="container footer-bottom"><span>© <span id="year">2026</span> Goldenplus Electronics. All rights reserved.</span><span>Embedded Display &amp; GUI Solutions</span></div></footer>
 </body></html>

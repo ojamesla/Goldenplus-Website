@@ -31,3 +31,54 @@ git push origin main
 **Important:** This is a browser-rendered static site. Article contents load from JSON via JavaScript; dedicated per-article metadata and search crawler support may be limited compared with pre-rendered static pages. If SEO becomes important for every article, use a static site generator later.
 
 The former `news/taiwan-smart-agriweek-2026.html` remains as a redirect for previously shared links. Existing product, About, Home and BDE pages are retained.
+
+## Product catalog
+
+The homepage family cards, product listing, comparison and shared `product.html?id=pico` detail page load `data/products.json`. The other family IDs are `infinite`, `aeternus` and `omni`. Product photos are optional; current catalog pages use text and tables.
+
+Each family contains `id`, `name`, `category`, `tagline`, `summary`, `audience`, `highlights`, `facts`, `models` (`caption`, `columns`, `rows`), `note`, `applications`, `comparison` (`format`, `integration`, `focus`) and `downloads`. Keep existing family IDs stable. Downloads must point to PDFs under `assets/docs/`. The family comparison uses these same records.
+
+English and Chinese brochures in `assets/docs/` are the original supplied exhibition PDFs. Published specifications follow these materials and the existing Pico display formats. Unconfirmed CPU/memory specifications and retail prices are intentionally omitted. Confirm any new model, size or interface before publishing it.
+
+Preview through HTTP, not by opening HTML with `file://`:
+
+```sh
+python3 -m json.tool data/products.json >/dev/null
+python3 -m http.server 8000
+```
+
+Check `/`, `/products.html`, and `/product.html?id=pico`, `?id=infinite`, `?id=aeternus`, `?id=omni`. The detailed pages require JavaScript, as the News article template does. Search previews for individual query-string pages may not reflect dynamically populated metadata.
+
+## Publishing updates and avoiding stale caches
+
+Before uploading a release, run `python3 tools/update_asset_versions.py`. It adds a content hash to each root HTML page's local CSS/JavaScript URLs. Run it again whenever an asset changes; unchanged files keep their version. Upload the updated HTML **and** its matching assets together. This also works on GitHub Pages, which ignores `.htaccess` and `web.config`.
+
+On the Apache production host, upload `.htaccess` too: HTML, CSS, JavaScript and JSON now require cache revalidation instead of retaining CSS/JS for eight days. Existing image caching is retained. The IIS `web.config` also requests revalidation for static files. Previously cached HTML can still need one force refresh after the first deployment of this fix.
+
+Deploy from `feat/product-catalog` while this pull request is open; `main` does not contain the catalog until the PR is merged. Upload **both** `products.html` (listing) and `product.html` (shared detail template), plus the entire `assets/` and `data/` folders, to the same website root as `index.html`. Keep `.git/` on your computer. Check that uploads did not create a nested project directory.
+
+The server configurations prefer `index.html` over old PHP homepages. Catalog paths are excluded from the legacy SiteBuilder fallback, so a missing `product.html` returns 404 instead of executing legacy PHP. This does not restore a missing file: upload the actual `product.html`. If an existing static file still returns 500, inspect the hosting error log.
+
+After deployment, check `/`, `/products.html`, `/product.html?id=pico`, `/product.html?id=aeternus`, `/product.html?id=omni`, `/news.html` and `/data/products.json`. Confirm the new homepage title, rendered tables, brochure downloads and cache response headers.
+
+## Production-only clean URLs
+
+The production domains `goldenplus-elec.com.tw` and `www.goldenplus-elec.com.tw` use `/products`, `/products/pico`, `/products/aeternus`, `/products/omni`, `/news/`, `/news/ARTICLE_ID`, `/about` and `/bde`. Upload the HTML, JavaScript and matching `.htaccess` (Apache) or `web.config` (IIS with URL Rewrite installed) together. The site must be installed at the domain root.
+
+Server rules internally serve the existing HTML templates. Direct requests to supported old `.html` URLs redirect permanently to the new routes, with article/product IDs moved from the query string into the path. Detail IDs use letters, digits, underscores and hyphens. Keep new News IDs in this format; other IDs retain their existing query-string URLs. Canonical detail redirects discard the old query string. The News listing keeps its trailing slash (`/news/`) because `news/` is a real legacy directory. Other supported clean routes redirect trailing slashes away. Existing legacy News redirect files remain usable.
+
+A small head bootstrap sets the production asset base to `/` before styles/scripts load. `assets/js/routes.js` converts navigation and dynamic product/news links, reads IDs from clean paths, and preserves in-page anchors. Data and article images resolve from the site base, so nested routes do not request `/products/assets` or `/news/data` by mistake.
+
+On GitHub Pages and localhost, the production host check is false: the original `.html?id=...` URLs and repository-relative assets continue working. GitHub Pages does not apply the server rewrite files. Clean paths are therefore tested in production hosting; refreshing a nested URL requires the matching server rules and template files to be present.
+
+### News directory redirect fix
+
+Do not redirect `/news/` to `/news`: Apache automatically adds the slash for the existing `news/` directory, causing a redirect loop. Explicit News rules now canonicalize `/news` and `/news.html` to `/news/` and internally serve `news.html`. The generic slash-removal and listing rules exclude the News directory. Article routes such as `/news/test-news-001` remain unchanged. Upload the updated server configuration and versioned HTML/route script together. After replacing a bad permanent redirect, verify with a fresh private browser window; an existing browser profile may have cached the old 301 responses.
+
+### Hosting compatibility
+
+The News directory rewrite uses `[L]`, which is supported by older Apache hosts, instead of the Apache 2.4-only `[END]` flag. If installing server configuration causes all paths, including static CSS/JS, to return HTTP 500, restore the previous working `.htaccess` first and inspect the host error log. A generic HTTP 500 response alone cannot identify the exact configuration directive.
+
+## Optional product photos
+
+Pico's detail page includes the original lineup image and four individual product photos. The optional `gallery` array in `data/products.json` contains `src`, `alt`, `caption`, intrinsic `width`/`height`, and an optional `featured` flag for a full-width image. Supported sources are local images directly under `assets/images/` with lowercase letters, digits or hyphens and a webp/png/jpg/jpeg extension. Photos link to their original files in a new tab. Families without a gallery retain their existing text/table layout.
