@@ -338,7 +338,7 @@
     "audience": "Equipment builders looking for an enclosed interface with direct peripheral connectivity.",
     "highlights": [
       "IPS display with capacitive touch",
-      "PWM, analog input and I²C connectivity",
+      "GPIO, PWM, analog input and I²C connectivity",
       "Ethernet, Wi-Fi and industrial communication options"
     ],
     "facts": [
@@ -352,7 +352,7 @@
       ],
       [
         "Peripheral interfaces",
-        "PWM with capture, 10-bit analog input, I²C"
+        "GPIO, PWM with capture, 10-bit analog input, I²C"
       ],
       [
         "Network interfaces",
