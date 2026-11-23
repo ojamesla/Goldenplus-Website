@@ -123,50 +123,45 @@
       }
     ],
     "io": {
-      "caption": "Pico Display I/O counts by screen size",
+      "caption": "ESP32-Pico onboard I/O by screen size (without expansion board)",
       "columns": [
         "Screen size",
         "GPIO",
-        "PWM outputs",
         "ADC inputs",
-        "I²C buses",
+        "PWM outputs",
         "Communication interfaces"
       ],
       "rows": [
         [
           "2.4 inch",
-          "To be confirmed",
-          "To be confirmed",
-          "To be confirmed",
-          "To be confirmed",
-          "To be confirmed"
+          "5",
+          "5",
+          "4",
+          "Wi-Fi ×1; BTE ×1; UART ×1"
         ],
         [
           "2.8 inch",
-          "To be confirmed",
-          "To be confirmed",
-          "To be confirmed",
-          "To be confirmed",
-          "To be confirmed"
+          "5",
+          "5",
+          "4",
+          "Wi-Fi ×1; BTE ×1; UART ×1"
         ],
         [
           "3.5 inch",
           "5",
           "5",
-          "5",
-          "1",
-          "UART: 2 (1 assigned to RS-485); CAN: 1; Ethernet (W5500): 1"
+          "4",
+          "Wi-Fi ×1; BTE ×1; UART ×1; CAN ×1 (optional)"
         ],
         [
           "4.3 inch",
-          "To be confirmed",
-          "To be confirmed",
-          "To be confirmed",
-          "To be confirmed",
-          "To be confirmed"
+          "5",
+          "5",
+          "4",
+          "Wi-Fi ×1; BTE ×1; UART ×1; CAN ×1 (optional); RS-485 ×1 (optional)"
         ]
       ],
-      "note": "Counts are based on the BDE profile for the 3.5-inch model. Some functions share pins, so the counts cannot be added together or assumed to be available simultaneously."
+      "note": "Counts apply to the ESP32-Pico without an expansion board. Optional interfaces vary by screen size. Some functions share pins, so the counts cannot be added together or assumed to be available simultaneously."
     }
   },
   {
