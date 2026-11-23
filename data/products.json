@@ -227,58 +227,58 @@
       "focus": "Screen size and resolution"
     },
     "io": {
-      "caption": "Infinite Display default I/O configuration by screen size",
+      "caption": "STM32-Infinite onboard I/O by screen size (without expansion board)",
       "columns": [
         "Screen size",
         "GPIO",
-        "PWM outputs",
         "ADC inputs",
-        "I²C buses",
-        "Communication interfaces"
+        "PWM outputs",
+        "Communication interfaces",
+        "Ethernet"
       ],
       "rows": [
         [
           "4.6 inch",
-          "To be confirmed",
-          "To be confirmed",
-          "To be confirmed",
-          "To be confirmed",
-          "To be confirmed"
+          "5",
+          "6",
+          "6",
+          "Wi-Fi ×0; UART ×0; CAN ×0; RS-485 ×0",
+          "—"
         ],
         [
           "5 inch",
-          "8",
+          "5",
           "6",
           "6",
-          "1",
-          "Wi-Fi: 1; RS-485: 1; CAN: 1; Ethernet (W5500): 1; console: 1"
+          "Wi-Fi ×1; UART ×0; CAN ×1; RS-485 ×1",
+          "—"
         ],
         [
           "7 inch",
-          "8",
+          "5",
           "6",
           "6",
-          "1",
-          "Wi-Fi: 1; RS-485: 1; CAN: 1; Ethernet (W5500): 1; console: 1"
+          "Wi-Fi ×1; UART ×0; CAN ×1; RS-485 ×1",
+          "1"
         ],
         [
           "8 inch",
-          "To be confirmed",
-          "To be confirmed",
-          "To be confirmed",
-          "To be confirmed",
-          "To be confirmed"
+          "5",
+          "6",
+          "6",
+          "Wi-Fi ×1; UART ×0; CAN ×2; RS-485 ×2",
+          "1"
         ],
         [
           "10.1 inch",
-          "To be confirmed",
-          "To be confirmed",
-          "To be confirmed",
-          "To be confirmed",
-          "To be confirmed"
+          "5",
+          "6",
+          "6",
+          "Wi-Fi ×1; UART ×0; CAN ×2; RS-485 ×2",
+          "1"
         ]
       ],
-      "note": "The 5- and 7-inch 800 × 480 presets share the same BDE device profile. The PWM count excludes the LCD backlight. I/O counts for the 4.6-, 8- and 10.1-inch configurations are pending confirmation."
+      "note": "Counts apply to the STM32-Infinite without an expansion board. An em dash indicates that Ethernet is not specified for that size."
     }
   },
   {
