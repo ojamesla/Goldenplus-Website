@@ -34,7 +34,7 @@ The former `news/taiwan-smart-agriweek-2026.html` remains as a redirect for prev
 
 ## Product catalog
 
-The homepage family cards, product listing, comparison and shared `product.html?id=pico` detail page load `data/products.json`. The other family IDs are `infinite`, `aeternus` and `omni`. Product photos are optional; current catalog pages use text and tables.
+The homepage family cards, product listing, comparison and shared `product.html?id=pico` detail page load `data/products.json`. The other family IDs are `infinite`, `aeternus` and `omni`. The Pico and Infinite detail pages include product photo galleries.
 
 Each family contains `id`, `name`, `category`, `tagline`, `summary`, `audience`, `highlights`, `facts`, `models` (`caption`, `columns`, `rows`), `note`, `applications`, `comparison` (`format`, `integration`, `focus`) and `downloads`. Keep existing family IDs stable. Downloads must point to PDFs under `assets/docs/`. The family comparison uses these same records.
 
@@ -49,6 +49,13 @@ python3 -m http.server 8000
 
 Check `/`, `/products.html`, and `/product.html?id=pico`, `?id=infinite`, `?id=aeternus`, `?id=omni`. The detailed pages require JavaScript, as the News article template does. Search previews for individual query-string pages may not reflect dynamically populated metadata.
 
+### Catalog status (2026-11-23)
+
+- STM32-Infinite follows Pico in the catalog. The detail page lists 4.6, 5, 7, 8 and 10.1-inch formats. Front photos are available for 5, 7, 8 and 10.1 inches.
+- The Infinite onboard I/O table lists GPIO, ADC, PWM, Wi-Fi, UART, CAN, RS-485 and Ethernet by screen size. Ethernet availability for 4.6 and 5 inches awaits confirmation.
+- Infinite temporarily uses the same English and Traditional Chinese product range brochures as Pico. Aeternus now lists GPIO among its peripheral interfaces.
+- Website copy uses the full name Brilliant Display Environment (BDE).
+
 ## Publishing updates and avoiding stale caches
 
 Before uploading a release, run `python3 tools/update_asset_versions.py`. It adds a content hash to each root HTML page's local CSS/JavaScript URLs. Run it again whenever an asset changes; unchanged files keep their version. Upload the updated HTML **and** its matching assets together. This also works on GitHub Pages, which ignores `.htaccess` and `web.config`.
@@ -59,11 +66,11 @@ Deploy from `feat/product-catalog` while this pull request is open; `main` does 
 
 The server configurations prefer `index.html` over old PHP homepages. Catalog paths are excluded from the legacy SiteBuilder fallback, so a missing `product.html` returns 404 instead of executing legacy PHP. This does not restore a missing file: upload the actual `product.html`. If an existing static file still returns 500, inspect the hosting error log.
 
-After deployment, check `/`, `/products.html`, `/product.html?id=pico`, `/product.html?id=aeternus`, `/product.html?id=omni`, `/news.html` and `/data/products.json`. Confirm the new homepage title, rendered tables, brochure downloads and cache response headers.
+After deployment, check `/`, `/products.html`, `/product.html?id=pico`, `/product.html?id=infinite`, `/product.html?id=aeternus`, `/product.html?id=omni`, `/news.html` and `/data/products.json`. Confirm the new homepage title, rendered tables, brochure downloads and cache response headers. On the Infinite page, verify all four photos and both brochure links.
 
 ## Production-only clean URLs
 
-The production domains `goldenplus-elec.com.tw` and `www.goldenplus-elec.com.tw` use `/products`, `/products/pico`, `/products/aeternus`, `/products/omni`, `/news/`, `/news/ARTICLE_ID`, `/about` and `/bde`. Upload the HTML, JavaScript and matching `.htaccess` (Apache) or `web.config` (IIS with URL Rewrite installed) together. The site must be installed at the domain root.
+The production domains `goldenplus-elec.com.tw` and `www.goldenplus-elec.com.tw` use `/products`, `/products/pico`, `/products/infinite`, `/products/aeternus`, `/products/omni`, `/news/`, `/news/ARTICLE_ID`, `/about` and `/bde`. Upload the HTML, JavaScript and matching `.htaccess` (Apache) or `web.config` (IIS with URL Rewrite installed) together. The site must be installed at the domain root.
 
 Server rules internally serve the existing HTML templates. Direct requests to supported old `.html` URLs redirect permanently to the new routes, with article/product IDs moved from the query string into the path. Detail IDs use letters, digits, underscores and hyphens. Keep new News IDs in this format; other IDs retain their existing query-string URLs. Canonical detail redirects discard the old query string. The News listing keeps its trailing slash (`/news/`) because `news/` is a real legacy directory. Other supported clean routes redirect trailing slashes away. Existing legacy News redirect files remain usable.
 
