@@ -250,7 +250,16 @@
       "Embedded operator panels",
       "Equipment status displays"
     ],
-    "downloads": [],
+    "downloads": [
+      {
+        "label": "Product range brochure · English",
+        "path": "assets/docs/product-range-en.pdf"
+      },
+      {
+        "label": "產品系列型錄 · 繁體中文",
+        "path": "assets/docs/product-range-zh-tw.pdf"
+      }
+    ],
     "comparison": {
       "format": "STM32H750 display platform",
       "integration": "Integrate a display into your equipment",
