@@ -186,6 +186,36 @@
         "800 × 320 / 800 × 480 / 800 × 600 / 1024 × 600"
       ]
     ],
+    "gallery": [
+      {
+        "src": "assets/images/infinite-5-front.webp",
+        "alt": "Front view of the 5-inch STM32-Infinite Display module",
+        "caption": "5 inch · 800 × 480",
+        "width": 2048,
+        "height": 1365
+      },
+      {
+        "src": "assets/images/infinite-7-front.webp",
+        "alt": "Front view of the 7-inch STM32-Infinite Display module",
+        "caption": "7 inch · 800 × 480",
+        "width": 2048,
+        "height": 1365
+      },
+      {
+        "src": "assets/images/infinite-8-front.webp",
+        "alt": "Front view of the 8-inch STM32-Infinite Display module",
+        "caption": "8 inch · 800 × 600",
+        "width": 2048,
+        "height": 1365
+      },
+      {
+        "src": "assets/images/infinite-10-1-front.webp",
+        "alt": "Front view of the 10.1-inch STM32-Infinite Display module",
+        "caption": "10.1 inch · 1024 × 600",
+        "width": 2048,
+        "height": 1365
+      }
+    ],
     "models": {
       "caption": "Infinite Display screen formats",
       "columns": [
