@@ -89,3 +89,7 @@ The News directory rewrite uses `[L]`, which is supported by older Apache hosts,
 ## Optional product photos
 
 Pico's detail page includes the original lineup image and four individual product photos. The optional `gallery` array in `data/products.json` contains `src`, `alt`, `caption`, intrinsic `width`/`height`, and an optional `featured` flag for a full-width image. Supported sources are local images directly under `assets/images/` with lowercase letters, digits or hyphens and a webp/png/jpg/jpeg extension. Photos link to their original files in a new tab. Families without a gallery retain their existing text/table layout.
+
+## Production SEO
+
+Upload `robots.txt` and `sitemap.xml` at the production document root with the updated HTML. The sitemap and main-page canonical tags use `https://goldenplus-elec.com.tw`. When adding or removing a product family or a news article with local content, update the corresponding clean URL in `sitemap.xml`. After deployment, verify the sitemap and its URLs on the production host before submitting it to Google Search Console.
